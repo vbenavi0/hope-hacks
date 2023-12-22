@@ -1,0 +1,42 @@
+main {
+    min-height: 76vh;
+}
+.form-container {
+    width: 70%;
+    margin: 30px auto;
+    padding: 30px;
+}
+
+.row1 {
+    width: 40%;
+    float: left;
+    padding: 20px;
+    color: #252f9c;
+    text-shadow: 3px 3px 3px #cfe5ff;
+}  
+
+.row1 h1 {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.row2 {
+    width: 60%;
+    float: left;
+    padding: 20px;
+}  
+
+.input-field { 
+    padding: 20px 0;
+
+}
+
+.row2 label {
+    line-height: 25px;
+    font-size: 2rem;
+}
+
+/* footer {
+    position: fixed;
+    bottom: 0;
+} */
