@@ -1,0 +1,25 @@
+.title1  {
+    text-align: center;
+    font-weight: 700;
+    color: #252f9c;
+    text-shadow: 3px 3px 3px #cfe5ff;
+}
+
+.intro {
+    margin: 40px auto;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #252f9c;
+    text-shadow: 3px 3px 3px #cfe5ff;
+    width: 60%;
+}
+
+iframe {
+    margin: 40px auto 0;
+}
+
+.saludLogo {
+    display: block;
+    margin: 0px auto 0px;
+}
