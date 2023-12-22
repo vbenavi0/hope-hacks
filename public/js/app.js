@@ -1,5 +1,15 @@
 console.log('Client side JS file is loaded!')
 
+const footerContainer = document.getElementById("footerContainer");
+fetch("footer.html")
+  .then(response => response.text())
+  .then(html => { 
+    footerContainer.innerHTML = html
+  })
+  .catch(error => {
+    console.error("error", error)
+  })
+  
 document.addEventListener('DOMContentLoaded', function() {
   var drop = document.querySelectorAll('.dropdown-trigger');
   var instances = M.Dropdown.init(drop, {

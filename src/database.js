@@ -12,7 +12,7 @@ connection.connect(function (err) {
 
 const user_email = connection.user_email;
 
-const insertQuery = `INSERT INTO Hope_Hacks_data.newsletter (${user_email}) VALUES (Email)`;
+const insertQuery = `INSERT INTO newsletter (${user_email}) VALUES (Email)`;
 
 connection.query(insertQuery, [user_email],(err,results) => {
     if (err) {
