@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+nav ul  {
+    margin-right: 10px;
+}
+
+.brand-logo {
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.page-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+.page-footer input {
+    padding: 8px;
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  .page-footer h5 {
+    text-align: center;
+  }
+
+  .page-footer li {
+    text-align: center;
+  }

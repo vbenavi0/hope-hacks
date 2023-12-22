@@ -1,0 +1,44 @@
+
+
+.title1  {
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 5px 5px 5px #252f9c;
+}
+
+.about-section {
+    margin: 60px 0 0;
+    border-top: 1px solid #252f9c;
+    border-bottom: 1px solid #252f9c;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-section p {
+    width: 70%;
+    font-size: 1.3rem;
+    margin: auto;
+    padding-bottom: 20px;
+    font-weight: 500;
+}
+
+.title2  {
+    text-align: center;
+    font-weight: 700;
+    color: #252f9c;
+    text-shadow: 3px 3px 3px #cfe5ff;
+}
+.remedies-title {
+    font-weight: 600;
+}
+
+
+/* .team-row {
+    padding: 30px 0;
+} */
+
+.saludLogo {
+    display: block;
+    margin: 0px auto 0px;
+}

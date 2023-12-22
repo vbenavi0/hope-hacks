@@ -1,0 +1,41 @@
+.title1  {
+    text-align: center;
+    font-weight: 700;
+    color: #252f9c;
+    text-shadow: 3px 3px 3px #cfe5ff;
+}
+
+.intro {
+    margin: 40px auto;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #252f9c;
+    text-shadow: 3px 3px 3px #cfe5ff;
+    width: 60%;
+}
+
+.card {
+    width: 60%;
+    margin: 100px auto;
+}
+
+.card p {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #252f9c;
+    text-shadow: 3px 3px 3px #cfe5ff;
+}
+
+.tab:hover {
+    background-color: #cfe5ff;
+}
+
+.tabOne, .tabTwo {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+
