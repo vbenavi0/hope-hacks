@@ -4,10 +4,9 @@ const hbs = require('hbs')
 
 const app = express()
 
-const idSearchEn = require('./utils/idSearchEn')
-const idSearchEs = require('./utils/idSearchEs')
-const keyWordSearchEn = require('./utils/keyWordSearchEn')
-const keyWordSearchEs = require('./utils/keyWordSearchEs')
+const idSearch = require('./utils/idSearch')
+const keyWordSearch = require('./utils/keyWordSearch')
+const catSearch = require('./utils/catSearch')
 
 const publicPath = path.join(__dirname, '../public')
 const viewPath = path.join(__dirname, '../templates/views') //directory for hbs files
@@ -24,44 +23,42 @@ app.get('', (req, res)=>{
     })
 })
 
-app.get('/idSearchEn', (req, res)=>{
-    if(!req.query.topicId){
-        return res.send({error: "You must provide a topic",})
+app.get('/idSearch', (req, res)=>{
+    if(!req.query.lang){
+        return res.send({error: "You must provide a lang query",})
     }
-    idSearchEn(req.query.topicId).then(data =>{
+    if(!req.query.topicId){
+        return res.send({error: "You must provide a topicId query",})
+    }
+    idSearch(req.query.lang, req.query.topicId).then(data =>{
         res.send({
             title: data[0].result
         })
     })
 })
 
-app.get('/idSearchEs', (req, res)=>{
-    if(!req.query.topicId){
-        return res.send({error: "You must provide a topic",})
+app.get('/keyWordSearch', (req, res)=>{
+    if(!req.query.lang){
+        return res.send({error: "You must provide a lang query",})
     }
-    idSearchEs(req.query.topicId).then(data =>{
-        res.send({
-            title: data[0].result
-        })
-    })
-})
-
-app.get('/keyWordSearchEn', (req, res)=>{
     if(!req.query.keyWord){
-        return res.send({error: "You must provide a keyWord",})
+        return res.send({error: "You must provide a keyWord query",})
     }
-    keyWordSearchEn(req.query.keyWord).then(data =>{
+    keyWordSearch(req.query.lang, req.query.keyWord).then(data =>{
         res.send({
             list: data[0].result
         })
     })
 })
 
-app.get('/keyWordSearchEs', (req, res)=>{
-    if(!req.query.keyWord){
-        return res.send({error: "You must provide a keyWord",})
+app.get('/catSearch', (req, res)=>{
+    if(!req.query.lang){
+        return res.send({error: "You must provide a lang query",})
     }
-    keyWordSearchEs(req.query.keyWord).then(data =>{
+    if(!req.query.categoryId){
+        return res.send({error: "You must provide a category query",})
+    }
+    catSearch(req.query.lang, req.query.categoryId).then(data =>{
         res.send({
             list: data[0].result
         })
