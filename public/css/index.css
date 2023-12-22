@@ -1,0 +1,123 @@
+.hero-logo {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(https://www.evenflo.com/cdn/shop/files/Healthcare-Worker-new.jpg?v=1679627041);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-inner {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    bottom: 45%;
+    right: 28%;
+    background: none;
+    text-align: center;
+}
+
+.hero-logo p {
+    font-size: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background: none;
+    color: white;
+    font-weight: 700;
+    text-shadow: 3px 3px 3px #252f9c;
+}
+
+.hero-logo button {
+    display: block;
+    width: 200px;
+    padding: 1rem;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #cfe5ff;
+    background-color: #252f9c;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 400;
+    border: 3px solid #252f9c;
+    border-radius: 20px;
+}
+
+.hero-logo button:hover {
+    border: 5px solid #fff;
+}
+
+.slogan {
+    text-align: center;
+    color: rgb(106, 104, 104);
+    width: 70%;
+    margin: 50px auto 30px;
+}
+
+.tools {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.box {
+    background-color: #252f9c;
+    width: 30%;
+    height: 600px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px #cfe5ff;
+    margin: auto;
+}
+
+.box h2 {
+    color: #cfe5ff;
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+    text-transform: uppercase;
+}
+
+.box iframe {
+    display: block;
+    margin: 50px auto;
+    border: 5px solid white;
+    border-radius: 5px;
+}
+
+iframe {
+    width: 400px;
+    height: 250px;
+    margin: auto;
+}
+
+.redirect {
+    background-color: #cfe5ff;
+    color: #252f9c;
+    padding: 30px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    display: block;
+    margin: 100px auto;
+}
+
+.redirect:hover {
+    border: 5px solid #000;
+}
+
+
+/* .logo {
+    display: block;
+    margin
+} */
+
+.saludLogo {
+    display: block;
+    margin: 50px auto 30px;
+}
