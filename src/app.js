@@ -12,6 +12,12 @@ const publicPath = path.join(__dirname, '../public')
 const viewPath = path.join(__dirname, '../templates/views') //directory for hbs files
 const partialPath = path.join(__dirname, '../templates/partials') //directory for partial files
 
+app.set({
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Credentials" : true 
+});
+
 app.set('view engine', 'hbs') //tells express to use our handlebar hbs files
 app.set('views', viewPath) //tells express where views folder is
 hbs.registerPartials(partialPath) //tells hbs where to find partials
@@ -20,6 +26,11 @@ app.use(express.static(publicPath))
 
 app.get('', (req, res)=>{
     res.render('index',{ 
+    })
+})
+
+app.get('/search', (req, res)=>{
+    res.render('search',{ 
     })
 })
 

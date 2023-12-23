@@ -8,6 +8,6 @@ async function catSearch(lang, categoryId) { //asynchronous function to search f
         .catch(err => console.error('error:' + err));
 }
 
-catSearch('en', 15).then(res => console.log(res[0].result[0])) //example output
+// catSearch('en', 15).then(res => console.log(res[0].result[0])) //example output
 
 module.exports = catSearch //export search function
