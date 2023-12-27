@@ -14,30 +14,30 @@
 <body>
     <header>
       <nav>
-          <div class="nav-wrapper blue lighten-3" class="navbar-fixed">
-            <a href="index.html" class="brand-logo blue-text text-darken-2">SALUD Y SONRISAS WELLNESS</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="index.html" class="blue-text text-darken-2">Home</a></li>
-              <li><a href="about.html" class="blue-text text-darken-2">About Us</a></li>
-              <li class="active"><a href="search.html" class="blue-text text-darken-2">Topic Search</a></li>
-              <li><a href="recommend.html" class="blue-text text-darken-2">Recommendations</a></li>
-              <li><a href="appt.html" class="blue-text text-darken-2">Online Visit</a></li>
-              <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1'>Language</a>
-              <ul id='dropdown1' class='dropdown-content'>
-                <li><a class="blue-text text-darken-2" href="#!">English</a></li>
-                <li><a class="blue-text text-darken-2" href="#!">Español</a></li>
-              </ul>
+        <div class="nav-wrapper blue lighten-3" class="navbar-fixed">
+          <a href="index.html" class="brand-logo blue-text text-darken-2" >SALUD Y SONRISAS WELLNESS</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li ><a href="index.html" class="blue-text text-darken-2" data-translate="Home">Home</a></li>            <li><a href="about.html" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
+            <li class="active"><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
+            <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
+            <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
+              <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="English">English</a></li>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="Español">Español</a></li>
             </ul>
-          </div>
-        </nav>
-      
-        <ul class="sidenav" id="mobile-demo" class="navbar-fixed">
-          <li><a href="about.html" class="blue-text text-darken-2">About Us</a></li>
-          <li><a href="search.html" class="blue-text text-darken-2">Topics Search</a></li>
-          <li><a href="recommend.html" class="blue-text text-darken-2">Recommendations</a></li>
-          <li><a href="appt.htm" class="blue-text text-darken-2">Online Visit</a></li>
-        </ul>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo" class="navbar-fixed">
+        <li class="active"><a href="index.html" class="blue-text text-darken-2">Home</a></li>
+        <li><a href="about.html" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
+        <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
+        <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
+        <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
+      </ul>
     </header>
   
 
@@ -45,7 +45,6 @@
 
       <h1 class="title1">Resource Search</h1>
       <p class="intro">Enter topic or keyword below to access curated healthcare resources.</p>
-
 
       <div class="card">
         <div class="card-content blue lighten-3">
@@ -67,7 +66,7 @@
               </select>
 
               <div class="row">
-                <form class="col s12" id="topicSearchForm">
+                <form class="col s12">
                   <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix">search</i>
@@ -75,43 +74,39 @@
                       <label for="icon_prefix">Search Topic</label>
                     </div>
                   </div>
-                  <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
-                  </button>
                 </form>
               </div>
+
+              <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
             </div>
           </div>
 
           <div id="test2" class="tabTwo">
-            <form class="input-field col s12" id="categorySearchForm">
+            <div class="input-field col s12">
               <select>
                 <option value="" disabled selected>Choose Language</option>
                 <option value="1">English</option>
                 <option value="2">Español</option>
               </select>
-              <select id="categories">
+              <select>
                 <option value="" disabled selected>Choose Category</option>
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>
               </select>
               <label>Search by category</label>
-              <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-              </button>
-            </form>
+            </div>
+
+            <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action">Submit
+              <i class="material-icons right">send</i>
+            </button>
           </div>
         </div>
 
       </div>
-
-      <div id="searchResults">
-        <p id="message1"></p>
-        <ul id="resultList"></ul>
-        <p id="message2"></p>
-      </div>
-
+    
 
 
     </main>
@@ -120,16 +115,16 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="blue-text text-darken-2">Sign up for our Newsletter!</h5>
+            <h5 class="blue-text text-darken-2" data-translate="Sign up for our Newsletter!">Sign up for our Newsletter!</h5>
             <input class="newsletter grey lighten-5" placeholder="email@email.com"></input>
           </div>
           <div class="col l4 offset-l2 s12">
-            <h5 class="blue-text text-darken-2">Helpful Links</h5>
+            <h5 class="blue-text text-darken-2" data-translate="Helpful Links">Helpful Links</h5>
             <ul>
-              <li><a class="blue-text text-darken-2" href="#!">Contact Us</a></li>
-              <li><a class="blue-text text-darken-2" href="#!">Meet the Team</a></li>
-              <li><a class="blue-text text-darken-2" href="#!">Search by Category</a></li>
-              <li><a class="blue-text text-darken-2" href="#!">Careers</a></li>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="Contact Us">Contact Us</a></li>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="Meet the Team">Meet the Team</a></li>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="Search by Category">Search by Category</a></li>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="Careers">Careers</a></li>
             </ul>
           </div>
         </div>
@@ -137,12 +132,13 @@
       <div class="footer-copyright">
         <div class="container blue-text text-darken-2">
         © 2023 Salud Y Sonrisas
-        <a class="blue-text text-darken-2 right" href="#!">More Links</a>
+        <a class="blue-text text-darken-2 right" href="#!" data-translate="More">More Links</a>
         </div>
       </div>
     </footer>
                 
-  <script src="../js/app.js"></script>
+  <script src="/public/js/app.js"></script>
+  <script src="/public/js/translator.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
