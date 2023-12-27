@@ -17,6 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
     closeOnClick: true,
     hover: true
   });
+
+  const newletterSubmit = document.getElementById("newsletter_Form")
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("We are here")
+  }
+  console.log(newletterSubmit) 
+  newletterSubmit.addEventListener("submit", handleSubmit)
 });
 
   //date picker
