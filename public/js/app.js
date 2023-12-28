@@ -1,4 +1,6 @@
 console.log('Client side JS file is loaded!')
+let url = window.location.href
+console.log(url)
 
 document.addEventListener('DOMContentLoaded', function() {
   var drop = document.querySelectorAll('.dropdown-trigger');
@@ -26,10 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const topicForm = document.querySelector('#topicSearchForm')
 const categoryForm = document.querySelector('#categorySearchForm')
+const keyLang = document.querySelector("#keyLang")
 const topicInput = document.querySelector('#icon_prefix')
 const m1 = document.querySelector('#message1')
 const m2 = document.querySelector('#message2')
 const list = document.querySelector('#resultList')
+const catLang = document.querySelector("#catLang")
+const catDrop = document.querySelector('#categories')
 
 topicForm.addEventListener('submit', (e)=>{
     e.preventDefault()
@@ -38,11 +43,12 @@ topicForm.addEventListener('submit', (e)=>{
 
     m1.textContent = ('loading') //display loading text
     m2.textContent = ('') //reset display
-    list.innerHTML = ('') //reset movie list
+    list.innerHTML = ('') //reset list
 
     const keyWord = topicInput.value
-    console.log('http://localhost:3000/keyWordSearch?lang=en&keyWord='+keyWord)
-    fetch('http://localhost:3000/keyWordSearch?lang=en&keyWord='+keyWord).then((response)=>{
+    const lang = keyLang.value
+    console.log('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord)
+    fetch('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord).then((response)=>{
       response.json()
     .then((data)=>{
       console.log(data)
@@ -72,4 +78,45 @@ topicForm.addEventListener('submit', (e)=>{
         }
       })
   })
+})
+
+if(url.includes('/search')){
+  console.log('category import')
+  fetch('http://localhost:3000/catList?lang=en').then((response)=>{
+      response.json()
+    .then((data)=>{
+      console.log(data)
+        if(data.error){ //if server error, display proper error
+            return console.log(data.error)
+        } 
+        else{
+            data.list.forEach(category => {
+                let item = document.createElement('option') 
+
+                item.value = category.Id
+                item.textContent = category.Title
+
+                catDrop.append(item) 
+          });
+          console.log('Categories Imported')
+        }
+      })
+    })
+}
+
+categoryForm.addEventListener('submit', (e)=>{
+  e.preventDefault()
+
+  console.log('category form submitted')
+
+  const cat = catDrop.value
+  const lang = catLang.value
+
+  console.log(lang)
+  console.log(cat)
+
+  m1.textContent = ('loading') //display loading text
+  m2.textContent = ('') //reset display
+  list.innerHTML = ('') //reset list
+
 })

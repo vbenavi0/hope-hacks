@@ -7,6 +7,7 @@ const app = express()
 const idSearch = require('./utils/idSearch')
 const keyWordSearch = require('./utils/keyWordSearch')
 const catSearch = require('./utils/catSearch')
+const catList = require('./utils/catList')
 
 const publicPath = path.join(__dirname, '../public')
 const viewPath = path.join(__dirname, '../templates/views') //directory for hbs files
@@ -56,9 +57,14 @@ app.get('/keyWordSearch', (req, res)=>{
         return res.send({error: "You must provide a keyWord query",})
     }
     keyWordSearch(req.query.lang, req.query.keyWord).then(data =>{
-        res.send({
-            list: data[0].result
-        })
+        if(data){
+            res.send({
+                list: data[0].result
+            })
+        }
+        else{
+            return res.send({error: "Invalid Search"})
+        }
     })
 })
 
@@ -72,6 +78,17 @@ app.get('/catSearch', (req, res)=>{
     catSearch(req.query.lang, req.query.categoryId).then(data =>{
         res.send({
             list: data[0].result
+        })
+    })
+})
+
+app.get('/catList', (req, res)=>{
+    if(!req.query.lang){
+        return res.send({error: "You must provide a lang query",})
+    }
+    catList(req.query.lang).then(data =>{
+        res.send({
+            list: data[0].result.Item
         })
     })
 })
