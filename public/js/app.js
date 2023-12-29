@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     hover: true
   });
 
-  const newletterSubmit = document.getElementById("newsletter_Form")
+  const newletterSubmit = document.getElementById("newsletterForm")
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("We are here")
