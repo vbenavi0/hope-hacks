@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const mysql = require('mysql2')
+const bodyParser = require('body-parser')
 
 const app = express()
 
@@ -42,6 +43,29 @@ pool.getConnection((err, connection) => {
 	});
 	connection.release();
 })
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/subscribe', (req, res) => {
+    const email = req.body.email;
+  
+    // Check if the email is provided
+    if (!email) {
+      return res.status(400).send('Email is required');
+    }
+  
+    // Insert the email into the database
+    const sql = 'INSERT INTO newsletter (email) VALUES (?)';
+    pool.query(sql, [email], (err, results) => {
+      if (err) {
+        console.log('Error inserting email into the database:', err);
+        return res.status(500).send('Internal Server Error');
+      }
+  
+      console.log('Email inserted into the database:', email);
+      res.redirect('/');
+    });
+  });
 
 const publicPath = path.join(__dirname, '../public')
 const viewPath = path.join(__dirname, '../templates/views') //directory for hbs files
