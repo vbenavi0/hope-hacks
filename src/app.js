@@ -5,18 +5,42 @@ const mysql = require('mysql2')
 
 const app = express()
 
-const databaseConfig = require('./database')
-
-const pool = mysql.createPool(databaseConfig)
+const pool = mysql.createPool({
+	host: 'localhost',
+	user: 'root',
+	password: 'password',
+})
 
 pool.getConnection((err, connection) => {
-    if (err) {
-        console.log('Error connecting to the database:', err);
-        return;
-    }
-    console.log('Connecting to the databse');
+	if (err) {
+		console.log('Error connecting to the database:', err);
+		return;
+	}
 
-    connection.release();
+	connection.query('CREATE DATABASE IF NOT EXISTS Hope_Hacks', (err) => {
+		if (err) {
+			console.log('Error creating the database:', err);
+			return;
+		}
+
+		connection.query('USE Hope_Hacks', (err) => {
+			if (err) {
+				console.log('Error selecting the database:', err);
+				return;
+			}
+
+			const sql = 'CREATE TABLE IF NOT EXISTS newsletter (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255))';
+			connection.query(sql, (err) => {
+				if (err) {
+				console.log('Error creating the table:', err);
+				return;
+				}
+
+				console.log('Database and table created successfully');
+			});
+		});
+	});
+	connection.release();
 })
 
 const publicPath = path.join(__dirname, '../public')
@@ -37,3 +61,4 @@ app.get('', (req, res)=>{
 app.listen(3000, ()=>{ //port is localhost:3000
     console.log('Server is listening on port 3000.')
 })
+
