@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/index.css">
@@ -24,22 +24,31 @@
             <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
             <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
             <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
-              <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
+            <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
             <ul id='dropdown1' class='dropdown-content'>
-              <li><a class="blue-text text-darken-2" href="#!" data-translate="English">English</a></li>
-              <li><a class="blue-text text-darken-2" href="#!" data-translate="Español">Español</a></li>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('English')">Español</a></li>
             </ul>
           </ul>
         </div>
+
+        <ul class="sidenav" id="mobile-demo" class="navbar-fixed">
+          <li class="active"><a href="index.html" class="blue-text text-darken-2">Home</a></li>
+          <li><a href="about.html" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
+          <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
+          <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
+          <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
+          <li><a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('English')">Español</a></li>
+          </ul>
+        </li>
+        </ul>
+          
       </nav>
 
-      <ul class="sidenav" id="mobile-demo" class="navbar-fixed">
-        <li class="active"><a href="index.html" class="blue-text text-darken-2">Home</a></li>
-        <li><a href="about.html" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
-        <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
-        <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
-        <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
-      </ul>
+     
       <!-- <div class="logo">
         <a href="index.html"><img src="/public/img/Healthcare-Worker-new.webp" alt="Healthcare worker hero images"/></a>
     </div> -->
@@ -108,4 +117,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
-</html
+</html>

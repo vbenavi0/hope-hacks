@@ -22,4 +22,13 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('DOMContentLoaded', function() {
     var times = document.querySelectorAll('.timepicker');
     var instances = M.Timepicker.init(times);
+
+
+    
   });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+        M.AutoInit();
+        
+    });

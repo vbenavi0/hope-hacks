@@ -23,10 +23,10 @@
         <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
         <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
         <li class="active"><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
-          <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
+        <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
         <ul id='dropdown1' class='dropdown-content'>
-          <li><a class="blue-text text-darken-2" href="#!" data-translate="English">English</a></li>
-          <li><a class="blue-text text-darken-2" href="#!" data-translate="Español">Español</a></li>
+          <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
+          <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('English')">Español</a></li>
         </ul>
       </ul>
     </div>
@@ -38,13 +38,19 @@
     <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
     <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
     <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
+    <li><a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
+        <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('English')">Español</a></li>
+    </ul>
+  </li>
   </ul>
       </header>
 
   <main>     
     <div class="form-container">
       <div class="row1">
-      <h1 class="form-header">Schedule a free online appointment with one of our expert Healthcare Workers</h1>
+      <h1 class="form-header" data-translate="schedule">Schedule a free online appointment with one of our expert Healthcare Workers</h1>
       </div>
         
     <div class="row2">
@@ -52,27 +58,27 @@
 
           <div class="input-field col s12">
             <input id="first_name" type="text" class="validate">
-            <label for="first_name" class="blue-text text-darken-2">First Name</label>
+            <label for="first_name" class="blue-text text-darken-2" data-translate="First Name">First Name</label>
           </div>
 
           <div class="input-field col s12">
             <input id="last_name" type="text" class="validate">
-            <label for="last_name" class="blue-text text-darken-2">Last Name</label>
+            <label for="last_name" class="blue-text text-darken-2" data-translate="Last Name">Last Name</label>
           </div>
 
           <div class="input-field col s12">
             <input id="email" type="email" class="validate">
-            <label for="email" class="blue-text text-darken-2">Email</label>
+            <label for="email" class="blue-text text-darken-2" data-translate="Email">Email</label>
           </div>
 
           <div class="input-field col s12">
             <input type="text" class="datepicker">
-            <label for="date" class="blue-text text-darken-2">Date</label>
+            <label for="date" class="blue-text text-darken-2" data-translate="Date">Date</label>
           </div>
 
           <div class="input-field col s12">
             <input type="text" class="timepicker">
-            <label for="time" class="blue-text text-darken-2">Time</label>
+            <label for="time" class="blue-text text-darken-2" data-translate="Time">Time</label>
           </div>
 
         <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action">Submit
