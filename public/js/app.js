@@ -180,7 +180,3 @@ categoryForm.addEventListener('submit', (e)=>{
     })
 })
 
-document.addEventListener('DOMContentLoaded', function() {
-        M.AutoInit();
-        
-});
