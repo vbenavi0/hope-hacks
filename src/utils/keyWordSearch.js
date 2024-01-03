@@ -6,7 +6,7 @@ async function keyWordSearch(lang, keyword) { //asynchronous function to search 
         .then(json => [{ //results to return
             result: json.Result.Resources.Resource
         }])
-        .catch(err => console.error('error:' + err));
+        .catch(err => console.log('error:' + err));
 }
 
 // keyWordSearch("es", "h").then(res => console.log(res[0].result[1])) // example output

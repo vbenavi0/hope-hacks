@@ -6,6 +6,11 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
+const idSearch = require('./utils/idSearch')
+const keyWordSearch = require('./utils/keyWordSearch')
+const catSearch = require('./utils/catSearch')
+const catList = require('./utils/catList')
+
 const pool = mysql.createPool({
 	host: 'localhost',
 	user: 'root',
@@ -82,7 +87,69 @@ app.get('', (req, res)=>{
     })
 })
 
+app.get('/search', (req, res)=>{
+    res.render('search',{ 
+    })
+})
+
+app.get('/idSearch', (req, res)=>{
+    if(!req.query.lang){
+        return res.send({error: "You must provide a lang query",})
+    }
+    if(!req.query.topicId){
+        return res.send({error: "You must provide a topicId query",})
+    }
+    idSearch(req.query.lang, req.query.topicId).then(data =>{
+        res.send({
+            title: data[0].result
+        })
+    })
+})
+
+app.get('/keyWordSearch', (req, res)=>{
+    if(!req.query.lang){
+        return res.send({error: "You must provide a lang query",})
+    }
+    if(!req.query.keyWord){
+        return res.send({error: "You must provide a keyWord query",})
+    }
+    keyWordSearch(req.query.lang, req.query.keyWord).then(data =>{
+        if(data){
+            res.send({
+                list: data[0].result
+            })
+        }
+        else{
+            return res.send({error: "Invalid Search"})
+        }
+    })
+})
+
+app.get('/catSearch', (req, res)=>{
+    if(!req.query.lang){
+        return res.send({error: "You must provide a lang query",})
+    }
+    if(!req.query.categoryId){
+        return res.send({error: "You must provide a category query",})
+    }
+    catSearch(req.query.lang, req.query.categoryId).then(data =>{
+        res.send({
+            list: data[0].result
+        })
+    })
+})
+
+app.get('/catList', (req, res)=>{
+    if(!req.query.lang){
+        return res.send({error: "You must provide a lang query",})
+    }
+    catList(req.query.lang).then(data =>{
+        res.send({
+            list: data[0].result.Item
+        })
+    })
+})
+
 app.listen(3000, ()=>{ //port is localhost:3000
     console.log('Server is listening on port 3000.')
 })
-

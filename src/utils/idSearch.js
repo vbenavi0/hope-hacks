@@ -5,7 +5,7 @@ async function idSearch(lang, topicId) { //asynchronous function to search for m
         .then(json => [{ //results to return
             result: json.Result.Resources.Resource[0]
         }])
-        .catch(err => console.error('error:' + err));
+        .catch(err => console.log('error:' + err));
 }
 
 // idSearch('es', 25).then(res => console.log(res)) //example output
