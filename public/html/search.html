@@ -18,30 +18,31 @@
           <a href="index.html" class="brand-logo blue-text text-darken-2" >SALUD Y SONRISAS WELLNESS</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li ><a href="index.html" class="blue-text text-darken-2" data-translate="Home">Home</a></li>            <li><a href="about.html" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
-            <li class="active"><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
+            <li class="active"><a href="index.html" class="blue-text text-darken-2" data-translate="Home">Home</a></li>
+            <li><a href="about.html" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
+            <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
             <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
             <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
-            <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
+              <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
             <ul id='dropdown1' class='dropdown-content'>
-              <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
-              <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('English')">Español</a></li>
-            </ul> 
+                <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
+                <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('Español')">Español</a></li>
+            </ul>
           </ul>
         </div>
       </nav>
-    
+
       <ul class="sidenav" id="mobile-demo" class="navbar-fixed">
         <li class="active"><a href="index.html" class="blue-text text-darken-2">Home</a></li>
         <li><a href="about.html" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
         <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
         <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
         <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
-        <li><a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
-          <ul id='dropdown1' class='dropdown-content'>
+        <li><a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown2' data-translate="Language">Language</a>
+          <ul id='dropdown2' class='dropdown-content'>
             <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
-            <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('English')">Español</a></li>
-        </ul>
+            <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('Español')">Español</a></li>
+          </ul>
       </li>
       </ul>
     </header>
@@ -72,7 +73,7 @@
               </select>
 
               <div class="row">
-                <form class="col s12">
+                <form class="col s12" id="topicSearchForm">
                   <div class="row">
                     <div class="input-field col s12">
                       <i class="material-icons prefix" data-translate="search">search</i>
@@ -80,17 +81,16 @@
                       <label for="icon_prefix" data-translate="Search Topic">Search Topic</label>
                     </div>
                   </div>
+                  <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
                 </form>
               </div>
-
-              <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action" data-translate="Submit Topic">Submit
-                <i class="material-icons right" data-translate="Send Topic">send</i>
-              </button>
             </div>
           </div>
 
           <div id="test2" class="tabTwo">
-            <div class="input-field col s12">
+            <form class="input-field col s12" id="categorySearchForm">
               <select>
                 <option value="" disabled selected data-translate="Choose Language">Choose Language</option>
                 <option value="1" data-translate="English">English</option>
@@ -112,44 +112,45 @@
         </div>
 
       </div>
-    
+
+      <div id="searchResults">
+        <p id="message1"></p>
+        <ul id="resultList"></ul>
+        <p id="message2"></p>
+      </div>
 
 
     </main>
-  
-    <footer class="page-footer blue lighten-3">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="blue-text text-darken-2" data-translate="Sign up for our Newsletter!">Sign up for our Newsletter!</h5>
-            <input class="newsletter grey lighten-5" placeholder="email@email.com"></input>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="blue-text text-darken-2" data-translate="Helpful Links">Helpful Links</h5>
-            <ul>
-              <li><a class="blue-text text-darken-2" href="#!" data-translate="Contact Us">Contact Us</a></li>
-              <li><a class="blue-text text-darken-2" href="#!" data-translate="Meet the Team">Meet the Team</a></li>
-              <li><a class="blue-text text-darken-2" href="#!" data-translate="Search by Category">Search by Category</a></li>
-              <li><a class="blue-text text-darken-2" href="#!" data-translate="Careers">Careers</a></li>
-            </ul>
+ <div id="footerContainer"></div>
+      <footer class="page-footer blue lighten-3">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="blue-text text-darken-2" data-translate="Sign up for our Newsletter!">Sign up for our Newsletter!</h5>
+              <input class="newsletter grey lighten-5" placeholder="email@email.com"></input>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="blue-text text-darken-2" data-translate="Helpful Links">Helpful Links</h5>
+              <ul>
+                <li><a class="blue-text text-darken-2" href="#!" data-translate="Contact Us">Contact Us</a></li>
+                <li><a class="blue-text text-darken-2" href="#!" data-translate="Meet the Team">Meet the Team</a></li>
+                <li><a class="blue-text text-darken-2" href="#!" data-translate="Search by Category">Search by Category</a></li>
+                <li><a class="blue-text text-darken-2" href="#!" data-translate="Careers">Careers</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container blue-text text-darken-2">
-        © 2023 Salud Y Sonrisas
-        <a class="blue-text text-darken-2 right" href="#!" data-translate="More">More Links</a>
+        <div class="footer-copyright">
+          <div class="container blue-text text-darken-2">
+          © 2023 Salud Y Sonrisas
+          <a class="blue-text text-darken-2 right" href="#!" data-translate="More">More Links</a>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
                 
   <script src="../js/app.js"></script>
-  <script src="/public/js/translator.js"></script>
+  <script src="../js/translator.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>
-  // 
-</script> 
-
-</body>
+  </body>
 </html>
 

@@ -1,16 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Home</title>
 </head>
+
 <body>
-    {{>header}}
+
+  <header>
+    <nav>
+        <div class="nav-wrapper blue lighten-3" class="navbar-fixed">
+          <a href="index.html" class="brand-logo blue-text text-darken-2">SALUD Y SONRISAS WELLNESS</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li class="active"><a href="index.html" class="blue-text text-darken-2">Home</a></li>
+            <li><a href="about.html" class="blue-text text-darken-2">About Us</a></li>
+            <li><a href="search.html" class="blue-text text-darken-2">Topic Search</a></li>
+            <li><a href="recommend.html" class="blue-text text-darken-2">Recommendations</a></li>
+            <li><a href="appt.html" class="blue-text text-darken-2">Online Visit</a></li>
+              <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1'>Language</a>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a class="blue-text text-darken-2" href="#!">English</a></li>
+              <li><a class="blue-text text-darken-2" href="#!">Español</a></li>
+            </ul>
+          </ul>
+        </div>
+      </nav>
+
+      <ul class="sidenav" id="mobile-demo" class="navbar-fixed">
+        <li><a href="about.html" class="blue-text text-darken-2">About Us</a></li>
+        <li><a href="search.html" class="blue-text text-darken-2">Topics Search</a></li>
+        <li><a href="recommend.html" class="blue-text text-darken-2">Recommendations</a></li>
+        <li><a href="appt.htm" class="blue-text text-darken-2">Online Visit</a></li>
+      </ul>
+
+      <!-- <div class="logo">
+        <a href="index.html"><img src="/public/img/Healthcare-Worker-new.webp" alt="Healthcare worker hero images"/></a>
+    </div> -->
+      <section class="hero-logo">
+        <div class="hero-inner">
+            <p>Healthcare and Smiles for all</p>
+            <a href="/public/html/search.html"><button>Start Here</button></a>
+        </div>
+    </section>
+    </header>
+
+      <main>
+
+        <h1 class="slogan">Empowering Health, Inspiring Wellness: Your Source for Reliable Care</h1>
+
+        <div class="row tools">
+
+          <div class="box">
+            <h2>Search resources by topic</h2>
+            <a href="/public/html/search.html"><button class="redirect">Topic Search</button></a>
+          </div>
+          <div class="box frame">
+            <h2>Healthcare recommendations by age and gender</h2>
+            <iframe src="https://www.health.gov/myhealthfinder?badge=true" name="myhealthfinderframe" frameborder="0" id="myhealthfinderframe" scrolling="yes" title="myhealthfinder widget"><p>Your browser does not support iframes.</p></iframe>
+          </div>
+          <div class="box">
+            <h2>Book free consultation with expert</h2>
+            <a href="/public/html/appt.html"><button class="redirect">Online Appointments</button></a>
+          </div>
     
+        </div>
+
+        <div class="logo">
+          <img src="/public/img/saludLogo.png" alt="Salud Y Sonrisas Logo" class="saludLogo">
+        </div>
+      
+      </main>
+      {{!-- <div id="footerContainer"></div> --}}
+<footer class="page-footer blue lighten-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="blue-text text-darken-2">Sign up for our Newsletter!</h5>
+          <form id="newsletterForm" action="/subscribe" method="post">
+             <input class="newsletter grey lighten-5" id="email" type="email" name="email" placeholder="email@example.com">
+             <input type="submit" id="submit" value="submit">
+          </form>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="blue-text text-darken-2">Helpful Links</h5>
+          <ul>
+            <li><a class="blue-text text-darken-2" href="#!">Contact Us</a></li>
+            <li><a class="blue-text text-darken-2" href="#!">Meet the Team</a></li>
+            <li><a class="blue-text text-darken-2" href="#!">Search by Category</a></li>
+            <li><a class="blue-text text-darken-2" href="#!">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container blue-text text-darken-2">
+      © 2023 Salud Y Sonrisas
+      <a class="blue-text text-darken-2 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
+      <footer class="page-footer blue lighten-3">
+        {{!-- <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="blue-text text-darken-2">Sign up for our Newsletter!</h5>
+              <input class="newsletter grey lighten-5" placeholder="email@email.com"></input>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="blue-text text-darken-2">Helpful Links</h5>
+              <ul>
+                <li><a class="blue-text text-darken-2" href="#!">Contact Us</a></li>
+                <li><a class="blue-text text-darken-2" href="#!">Meet the Team</a></li>
+                <li><a class="blue-text text-darken-2" href="#!">Search by Category</a></li>
+                <li><a class="blue-text text-darken-2" href="#!">Careers</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container blue-text text-darken-2">
+          © 2023 Salud Y Sonrisas
+          <a class="blue-text text-darken-2 right" href="#!">More Links</a>
+          </div>
+        </div>
+      </footer> --}}
+              
+<script src="../js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>
