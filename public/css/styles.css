@@ -37,3 +37,46 @@ nav ul  {
   .page-footer li {
     text-align: center;
   }
+
+  .newsletter {
+    text-align: center; /* Center the text within the input field */
+  }
+  
+  /* Optional: Adjust the width and margin as needed */
+  .newsletter {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: 600px) {
+    /* Adjustments for the brand logo or any other elements as needed */
+    .brand-logo {
+        margin-left: 5px;
+    }
+
+    /* Adjusting margin for the navigation ul on smaller screens */
+    nav ul {
+        margin-right: 5px;
+    }
+
+    /* Adjusting padding for the input in the footer on smaller screens */
+    .page-footer input {
+        padding: 6px;
+    }
+
+    .form-container {
+      width: 90%; /* Adjust as needed */
+      margin: 15px auto; /* Adjust as needed */
+      padding: 15px; /* Adjust as needed */
+  }
+
+  .row1,
+  .row2 {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .row1 h1 {
+      font-size: 4rem; /* Adjust as needed */
+  }
+}

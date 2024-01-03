@@ -42,3 +42,190 @@
     display: block;
     margin: 0px auto 0px;
 }
+
+
+@media only screen and (max-width: 320px) {
+
+
+    .brand-logo.blue-text.text-darken-2 {
+        font-size: 10px !important;
+        margin-left: 0;
+      
+    }
+    .title2 {
+        font-size: 38px; /* Adjust font size for smaller screens */
+        margin-bottom: 10px; /* Adjust spacing below the heading for smaller screens */
+      }
+
+    .about-section p {
+        width: 70%;
+        font-size: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 20px;
+        font-weight: 500;
+    }
+    
+      .title1, .about-paragraph {
+        font-size: 16px; /* Adjust font size for smaller screens */
+      }
+
+    .col.s3 {
+        width: 100%; /* Make the column full width on smaller screens */
+        display: contents;
+      }
+    
+
+
+      .saludLogo {
+        width: 80%; /* Adjust the width or other styles as needed */
+        margin: 20px auto; /* Adjust the margin or other styles as needed */
+    }
+
+    .card .card-image img{
+        height: 300px;
+        width: 300px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+
+
+  }
+
+
+@media only screen and (min-width: 321px) and (max-width: 600px) {
+
+
+    .brand-logo.blue-text.text-darken-2 {
+        font-size: 80% !important;
+        margin-left: -16px;
+    }
+
+    
+
+    .brand-logo.blue-text.text-darken-2 {
+        font-size: 10px !important;
+        margin-left: 0;
+      
+    }
+    .title2 {
+        font-size: 38px; /* Adjust font size for smaller screens */
+        margin-bottom: 30px; /* Adjust spacing below the heading for smaller screens */
+      }
+
+    .about-section p {
+        width: 70%;
+        font-size: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 20px;
+        font-weight: 500;
+    }
+    
+      .title1, .about-paragraph {
+        font-size: 16px; /* Adjust font size for smaller screens */
+      }
+
+    .col.s3 {
+        width: 100%; /* Make the column full width on smaller screens */
+        display: contents;
+      }
+    
+
+
+      .saludLogo {
+        width: 80%; /* Adjust the width or other styles as needed */
+        margin: 20px auto; /* Adjust the margin or other styles as needed */
+    }
+
+    .card {
+        width: 310px;
+        margin: auto;
+            }
+           
+
+    .card .card-image img{
+height: 300px;
+width: 300px;
+margin: auto;
+padding: 10px;
+    }
+   
+    
+  }
+  
+  /* Styles for screens from 601px to 933px */
+  @media only screen and (min-width: 601px) and (max-width: 933px) {
+
+    .brand-logo.blue-text.text-darken-2 {
+        font-size: 20px !important;
+        margin-left: 0;
+      
+    }
+
+
+    .title2 {
+        font-size: 38px; /* Adjust font size for smaller screens */
+        margin-bottom: 20px; /* Adjust spacing below the heading for smaller screens */
+      }
+
+    .about-section p {
+        width: 70%;
+        font-size: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 20px;
+        font-weight: 500;
+    }
+    
+      .title1, .about-paragraph {
+        font-size: 19px; /* Adjust font size for smaller screens */
+      }
+
+      .col.s3 {
+        width: 100%; /* Make the column full width on smaller screens */
+        display: contents;
+        margin: 0 auto; /* Center the card within the column */
+
+      }
+    
+
+
+      .saludLogo {
+        width: 80%; /* Adjust the width or other styles as needed */
+        margin: 20px auto; /* Adjust the margin or other styles as needed */
+    }
+
+    .card {
+        width: 350px;
+        margin: auto;
+            }
+           
+
+    .card .card-image img{
+height: 350px;
+width: 330px;
+margin: auto;
+padding: 10px;
+    }
+   
+    }
+  
+  
+  /* Styles for screens from 934px to 1200px */
+  @media only screen and (min-width: 934px) and (max-width: 1200px) {
+ 
+    .card .card-content p {
+        padding: 0 !important; /* Adjust padding for smaller screens */
+        font-size: 19px !important; /* Adjust font size for smaller screens */
+      }  
+
+      .intro {
+        /* Add specific styles for screens from 321px to 700px for the paragraph */
+        font-size: 1.5rem; /* Example font size adjustment */
+        margin-bottom: -70px;
+      }
+
+  
+  }

@@ -28,6 +28,12 @@
     text-shadow: 3px 3px 3px #cfe5ff;
 }
 
+.tabs {
+    display: flex;
+    flex-direction: row; /* Tabs are in a row by default on larger screens */
+    /* Add any necessary styles for larger screens */
+  }
+
 .tab:hover {
     background-color: #cfe5ff;
 }
@@ -38,4 +44,141 @@
     text-align: center;
 }
 
+@media only screen and (max-width: 320px) {
 
+
+    .brand-logo.blue-text.text-darken-2 {
+        font-size: 10px !important;
+        margin-left: 0;
+      
+    }
+
+    .title1 {
+        /* Add specific styles for screens from 321px to 700px for the title */
+        font-size: 1.8rem; /* Example font size adjustment */
+      }
+    
+      .intro {
+        /* Add specific styles for screens from 321px to 700px for the paragraph */
+        font-size: 1rem; /* Example font size adjustment */
+        margin-bottom: -70px;
+      }
+
+    
+
+    .card .card-content p {
+            padding: 0 !important; /* Adjust padding for smaller screens */
+            font-size: 14px !important; /* Adjust font size for smaller screens */
+          }   
+          
+          .tabs .tab a{
+            /* Add styles for smaller screens */
+            font-size: 11px; /* Adjust font size for smaller screens */
+           /* flex-direction: column !important; /* Stack tabs vertically for smaller screens */
+           /* margin-bottom: 8px; /* Add some spacing between stacked tabs */
+
+          }
+
+          .select-wrapper input.select-dropdown {
+            width: 100%; /* Make the select box full width on smaller screens */
+            font-size: 14px !important; /* Adjust font size for smaller screens */
+            margin-bottom: 8px; /* Add some spacing below the select box */
+          }
+
+  }
+
+
+@media only screen and (min-width: 321px) and (max-width: 600px) {
+
+
+    .brand-logo.blue-text.text-darken-2 {
+        font-size: 80% !important;
+        margin-left: -16px;
+    }
+
+  
+
+    .title1 {
+        /* Add specific styles for screens from 321px to 700px for the title */
+        font-size: 2rem; /* Example font size adjustment */
+      }
+    
+      .intro {
+        /* Add specific styles for screens from 321px to 700px for the paragraph */
+        font-size: 1.2rem; /* Example font size adjustment */
+        margin-bottom: -70px;
+      }
+
+      .card .card-content p {
+        padding: 0 !important; /* Adjust padding for smaller screens */
+        font-size: 17px !important; /* Adjust font size for smaller screens */
+      } 
+      
+          
+      .tabs .tab a{
+        /* Add styles for smaller screens */
+        font-size: 13px; /* Adjust font size for smaller screens */
+       /* flex-direction: column !important; /* Stack tabs vertically for smaller screens */
+       /* margin-bottom: 8px; /* Add some spacing between stacked tabs */
+
+      }
+
+      .select-wrapper input.select-dropdown {
+        width: 100%; /* Make the select box full width on smaller screens */
+        font-size: 15px !important; /* Adjust font size for smaller screens */
+        margin-bottom: 8px; /* Add some spacing below the select box */
+      }
+
+
+   
+    
+  }
+  
+  /* Styles for screens from 601px to 933px */
+  @media only screen and (min-width: 601px) and (max-width: 933px) {
+
+    .brand-logo.blue-text.text-darken-2 {
+        font-size: 20px !important;
+        margin-left: 0;
+      
+    }
+
+
+    .title1 {
+        /* Add specific styles for screens from 321px to 700px for the title */
+        font-size: 2.3rem; /* Example font size adjustment */
+      }
+    
+      .intro {
+        /* Add specific styles for screens from 321px to 700px for the paragraph */
+        font-size: 1.5rem; /* Example font size adjustment */
+        margin-bottom: -70px;
+      }
+
+      .card .card-content p {
+        padding: 0 !important; /* Adjust padding for smaller screens */
+        font-size: 20px !important; /* Adjust font size for smaller screens */
+      }  
+        
+          
+   
+ 
+  }
+  
+  /* Styles for screens from 934px to 1200px */
+  @media only screen and (min-width: 934px) and (max-width: 1200px) {
+ 
+    .card .card-content p {
+        padding: 0 !important; /* Adjust padding for smaller screens */
+        font-size: 25px !important; /* Adjust font size for smaller screens */
+      }  
+
+      .intro {
+        /* Add specific styles for screens from 321px to 700px for the paragraph */
+        font-size: 1.5rem; /* Example font size adjustment */
+        margin-bottom: -70px;
+      }
+
+  
+  }
+  
