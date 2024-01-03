@@ -5,7 +5,7 @@ async function catSearch(lang, categoryId) { //asynchronous function to search f
         .then(json => [{ //results to return
             result: json.Result.Resources.Resource
         }])
-        .catch(err => console.error('error:' + err));
+        .catch(err => console.log('error:' + err));
 }
 
 // catSearch('en', 15).then(res => console.log(res[0].result[0])) //example output

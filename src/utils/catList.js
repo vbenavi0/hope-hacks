@@ -5,7 +5,7 @@ async function catList(lang) { //asynchronous function to search for movie based
         .then(json => [{ //results to return
             result: json.Result.Items
         }])
-        .catch(err => console.error('error:' + err));
+        .catch(err => console.log('error:' + err));
 }
 
 // catList('en').then(res => console.log(res[0].result)) //example output
