@@ -1,6 +1,8 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
+const mysql = require('mysql2')
+const bodyParser = require('body-parser')
 
 const app = express()
 
@@ -9,15 +11,70 @@ const keyWordSearch = require('./utils/keyWordSearch')
 const catSearch = require('./utils/catSearch')
 const catList = require('./utils/catList')
 
+const pool = mysql.createPool({
+	host: 'localhost',
+	user: 'root',
+	password: 'password',
+})
+
+pool.getConnection((err, connection) => {
+	if (err) {
+		console.log('Error connecting to the database:', err);
+		return;
+	}
+
+	connection.query('CREATE DATABASE IF NOT EXISTS Hope_Hacks', (err) => {
+		if (err) {
+			console.log('Error creating the database:', err);
+			return;
+		}
+
+		connection.query('USE Hope_Hacks', (err) => {
+			if (err) {
+				console.log('Error selecting the database:', err);
+				return;
+			}
+
+			const sql = 'CREATE TABLE IF NOT EXISTS newsletter (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255))';
+			connection.query(sql, (err) => {
+				if (err) {
+				console.log('Error creating the table:', err);
+				return;
+				}
+
+				console.log('Database and table created successfully');
+			});
+		});
+	});
+	connection.release();
+})
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/subscribe', (req, res) => {
+    const email = req.body.email;
+  
+    // Check if the email is provided
+    if (!email) {
+      return res.status(400).send('Email is required');
+    }
+  
+    // Insert the email into the database
+    const sql = 'INSERT INTO newsletter (email) VALUES (?)';
+    pool.query(sql, [email], (err, results) => {
+      if (err) {
+        console.log('Error inserting email into the database:', err);
+        return res.status(500).send('Internal Server Error');
+      }
+  
+      console.log('Email inserted into the database:', email);
+      res.redirect('/');
+    });
+  });
+
 const publicPath = path.join(__dirname, '../public')
 const viewPath = path.join(__dirname, '../templates/views') //directory for hbs files
 const partialPath = path.join(__dirname, '../templates/partials') //directory for partial files
-
-app.set({
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Credentials" : true 
-});
 
 app.set('view engine', 'hbs') //tells express to use our handlebar hbs files
 app.set('views', viewPath) //tells express where views folder is

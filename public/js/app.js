@@ -2,6 +2,16 @@ console.log('Client side JS file is loaded!')
 let url = window.location.href
 console.log(url)
 
+// const footerContainer = document.getElementById("footerContainer");
+// fetch("footer.html")
+//   .then(response => response.text())
+//   .then(html => { 
+//     footerContainer.innerHTML = html
+//   })
+//   .catch(error => {
+//     console.error("error", error)
+//   })
+  
 document.addEventListener('DOMContentLoaded', function() {
   var drop = document.querySelectorAll('.dropdown-trigger');
   var instances = M.Dropdown.init(drop, {
@@ -10,6 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
     hover: true
   });
 });
+
+//   const newletterSubmit = document.getElementById("newsletterForm")
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     console.log("We are here")
+//   }
+//   console.log(newletterSubmit) 
+//   newletterSubmit.addEventListener("submit", handleSubmit)
+// });
 
   //date picker
   document.addEventListener('DOMContentLoaded', function() {
@@ -159,4 +178,11 @@ categoryForm.addEventListener('submit', (e)=>{
         }
       })
     })
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+        M.AutoInit();
+        
+    });
+  
 })
