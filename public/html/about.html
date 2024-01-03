@@ -5,39 +5,46 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="stylesheet" href="/public/css/about.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/about.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>About Us</title>
 </head>
 
 <body>
   <header>
-      <nav>
-          <div class="nav-wrapper blue lighten-3" class="navbar-fixed">
-            <a href="index.html" class="brand-logo blue-text text-darken-2">SALUD Y SONRISAS WELLNESS</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="index.html" class="blue-text text-darken-2">Home</a></li>
-              <li class="active"><a href="about.html" class="blue-text text-darken-2">About Us</a></li>
-              <li><a href="search.html" class="blue-text text-darken-2">Topic Search</a></li>
-              <li><a href="recommend.html" class="blue-text text-darken-2">Recommendations</a></li>
-              <li><a href="appt.html" class="blue-text text-darken-2">Online Visit</a></li>
-              <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1'>Language</a>
-              <ul id='dropdown1' class='dropdown-content'>
-                <li><a class="blue-text text-darken-2" href="#!">English</a></li>
-                <li><a class="blue-text text-darken-2" href="#!">Español</a></li>
-              </ul>
-            </ul>
-          </div>
-        </nav>
-      
-        <ul class="sidenav" id="mobile-demo" class="navbar-fixed">
-          <li><a href="about.html" class="blue-text text-darken-2">About Us</a></li>
-          <li><a href="search.html" class="blue-text text-darken-2">Topics Search</a></li>
-          <li><a href="recommend.html" class="blue-text text-darken-2">Recommendations</a></li>
-          <li><a href="appt.htm" class="blue-text text-darken-2">Online Visit</a></li>
+    <nav>
+      <div class="nav-wrapper blue lighten-3" class="navbar-fixed">
+        <a href="index.html" class="brand-logo blue-text text-darken-2" >SALUD Y SONRISAS WELLNESS</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li ><a href="index.html" class="blue-text text-darken-2" data-translate="Home">Home</a></li>
+          <li class="active"><a href="about.html" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
+          <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
+          <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
+          <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
+          <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
+            <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('English')">Español</a></li>
+          </ul>
         </ul>
+      </div>
+    </nav>
+  
+    <ul class="sidenav" id="mobile-demo" class="navbar-fixed">
+      <li class="active"><a href="index.html" class="blue-text text-darken-2">Home</a></li>
+      <li><a href="about.html" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
+      <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
+      <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
+      <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
+      <li><a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
+          <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('English')">Español</a></li>
+      </ul>
+    </li>
+    </ul>
       </header>
 
         <main>
@@ -47,25 +54,25 @@
           </div> -->
 
 <div class="about-section blue lighten-2">
-  <h1 class="title1">About Salud Y Sonrisas</h1>
-  <p class="about-paragraph">At Salud y Sonrisas, our mission is to revolutionize healthcare accessibility by providing free, expert online appointments, tailored resources, and personalized recommendations based on age and gender. We are committed to breaking down barriers to quality healthcare, ensuring that everyone, regardless of background, can access professional medical advice conveniently from the comfort of their homes. Through innovative technology and a dedicated team of healthcare experts, we strive to empower individuals to proactively manage their health, fostering a community where well-being knows no bounds. Salud y Sonrisas is more than an online healthcare organization; it's a catalyst for positive change, promoting smiles through accessible, personalized, and expert healthcare guidance for all.</p>
+  <h1 class="title1" data-translate="About Salud Y Sonrisas">About Salud Y Sonrisas</h1>
+  <p class="about-paragraph" data-translate="At Salud y Sonrisas">At Salud y Sonrisas, our mission is to revolutionize healthcare accessibility by providing free, expert online appointments, tailored resources, and personalized recommendations based on age and gender. We are committed to breaking down barriers to quality healthcare, ensuring that everyone, regardless of background, can access professional medical advice conveniently from the comfort of their homes. Through innovative technology and a dedicated team of healthcare experts, we strive to empower individuals to proactively manage their health, fostering a community where well-being knows no bounds. Salud y Sonrisas is more than an online healthcare organization; it's a catalyst for positive change, promoting smiles through accessible, personalized, and expert healthcare guidance for all.</p>
 </div>
 
 <div class="row team-row" >
-          <h1 class="title2">Meet the team</h1>
+          <h1 class="title2" data-translate="Meet the team">Meet the team</h1>
 
             <div class="col s3">
               <div class="card">
                 <div class="card-image">
-                  <img src="/public/img/ricardo.jpg">
+                  <img src="../img/ricardo.jpg">
                   <span class="card-title">Ricardo Peña</span>
                 </div>
                 <div class="card-content">
-                  <p>"Through Salud Y Sonrisas Wellness, I am honored to play a role in creating positive change and fostering wellness for all. I actively engage with the organization's mission, leveraging my dedication and enthusiasm to ensure healthcare reaches every individual."</p>
+                  <p data-translate="Ricardo">"Through Salud Y Sonrisas Wellness, I am honored to play a role in creating positive change and fostering wellness for all. I actively engage with the organization's mission, leveraging my dedication and enthusiasm to ensure healthcare reaches every individual."</p>
                 </div>
                 <div class="card-action">
-                  <p class="remedies-title">Home Remedies:</p>
-                  <p class="remedies">A Venezuelan popular home remedy for an upset stomach is boil a few slices of fresh ginger, then add a handful of fresh mint leaves. Let it steep for 5-10 minutes, strain the mixture, and drink the tea slowly. Instant relief!</p>
+                  <p class="remedies-title" data-translate="Ricardo Home">Home Remedies:</p>
+                  <p class="remedies" data-translate="Ricardo Home Remedies">A Venezuelan popular home remedy for an upset stomach is boil a few slices of fresh ginger, then add a handful of fresh mint leaves. Let it steep for 5-10 minutes, strain the mixture, and drink the tea slowly. Instant relief!</p>
                 </div>
               </div>
             </div>
@@ -73,15 +80,15 @@
             <div class="col s3">
               <div class="card">
                 <div class="card-image">
-                  <img src="/public/img/brenda.jpg">
+                  <img src="../img/brenda.jpg">
                   <span class="card-title">Brenda Manon</span>
                 </div>
                 <div class="card-content">
-                  <p>"I lead a fulfilling role at Salud Y Sonrisas Wellness, a beacon of hope in the realm of free healthcare. My decision to join this organization is rooted in a sincere dedication to making a meaningful impact on healthcare accessibility. I firmly believe that quality healthcare is a fundamental right, not a privilege. Salud Y Sonrisas Wellness provides the perfect platform for me to contribute to the well-being of underserved communities, aligning seamlessly with my mission to bridge gaps in healthcare."</p>
+                  <p data-translate="Brenda">I lead a fulfilling role at Salud Y Sonrisas Wellness, a beacon of hope in the realm of free healthcare. My decision to join this organization is rooted in a sincere dedication to making a meaningful impact on healthcare accessibility. I firmly believe that quality healthcare is a fundamental right, not a privilege. Salud Y Sonrisas Wellness provides the perfect platform for me to contribute to the well-being of underserved communities, aligning seamlessly with my mission to bridge gaps in healthcare."</p>
                 </div>
                 <div class="card-action">
-                  <p class="remedies-title">Home Remedies:</p>
-                  <p class="remedies">In Mexican households, a common remedy for a sore throat is to mix the juice of half a lime with a tablespoon of honey in a warm glass of water. Stir well and drink slowly! </p>
+                  <p class="remedies-title" data-translate="Brenda Home">Home Remedies:</p>
+                  <p class="remedies" data-translate="Brenda Home Remedies">In Mexican households, a common remedy for a sore throat is to mix the juice of half a lime with a tablespoon of honey in a warm glass of water. Stir well and drink slowly! </p>
                 </div>
               </div>
             </div>
@@ -89,15 +96,15 @@
             <div class="col s3">
               <div class="card">
                 <div class="card-image">
-                  <img src="/public/img/victor.jpg">
+                  <img src="../img/victor.jpg">
                   <span class="card-title">Victor Benavides</span>
                 </div>
                 <div class="card-content">
-                  <p>"My professional journey has brought me to an inspiring role at Salud Y Sonrisas Wellness, a free healthcare organization that resonates with my deep commitment to making a positive impact. Joining this organization wasn't just a career choice; it was a heartfelt decision rooted in my belief in accessible and equitable healthcare for all."</p>
+                  <p data-translate="Victor">"My professional journey has brought me to an inspiring role at Salud Y Sonrisas Wellness, a free healthcare organization that resonates with my deep commitment to making a positive impact. Joining this organization wasn't just a career choice; it was a heartfelt decision rooted in my belief in accessible and equitable healthcare for all."</p>
                 </div>
                 <div class="card-action">
-                  <p class="remedies-title">Home Remedies:</p>
-                  <p class="remedies">Aloe Vera is a mainstay of Salvadorian homes. It is used to treat everything from acne, rashes, burns, and psoriasis. We like to use the gel straight from the plant!</p>
+                  <p class="remedies-title" data-translate="Victor Home">Home Remedies:</p>
+                  <p class="remedies" data-translate="Victor Home Remedies">Aloe Vera is a mainstay of Salvadorian homes. It is used to treat everything from acne, rashes, burns, and psoriasis. We like to use the gel straight from the plant!</p>
                 </div>
               </div>
             </div>
@@ -105,30 +112,55 @@
             <div class="col s3">
               <div class="card">
                 <div class="card-image">
-                  <img src="/public/img/monica.jpg">
+                  <img src="../img/monica.jpg">
                   <span class="card-title">Monica Asensio</span>
                 </div>
                 <div class="card-content">
-                  <p>"My decision to work with this remarkable initiative stems from a profound belief in the importance of accessible and equitable healthcare for all. I'm driven by a genuine passion for improving the well-being of underserved communities. At Salud Y Sonrisas Wellness, I contribute my skills and compassion to a noble mission—making healthcare accessible and promoting health and smiles for everyone."</p>
+                  <p data-translate="Monica">"My decision to work with this remarkable initiative stems from a profound belief in the importance of accessible and equitable healthcare for all. I'm driven by a genuine passion for improving the well-being of underserved communities. At Salud Y Sonrisas Wellness, I contribute my skills and compassion to a noble mission—making healthcare accessible and promoting health and smiles for everyone."</p>
                 </div>
                 <div class="card-action">
-                  <p class="remedies-title">Home Remedies:</p>
-                  <p class="remedies">Slight cough? All Cubans know that a clean pair of socks and feet slathered in ViVa-Po-Ru (Vicks VapoRub) is the quickest way to get back to 100%!</p>
+                  <p class="remedies-title" data-translate="Monica Home">Home Remedies:</p>
+                  <p class="remedies" data-translate="Monica Home Remedies">Slight cough? All Cubans know that a clean pair of socks and feet slathered in ViVa-Po-Ru (Vicks VapoRub) is the quickest way to get back to 100%!</p>
                 </div>
               </div>
             </div>
           </div>
 
-
           <div class="logo">
-            <img src="/public/img/saludLogo.png" alt="Salud Y Sonrisas Logo" class="saludLogo">
+            <img src="../img/saludLogo.png" alt="Salud Y Sonrisas Logo" class="saludLogo">
           </div>
 
       </main>
-  
       <div id="footerContainer"></div>
-             
-  <script src="/public/js/app.js"></script>
+      <footer class="page-footer blue lighten-3">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="blue-text text-darken-2" data-translate="Sign up for our Newsletter!">Sign up for our Newsletter!</h5>
+              <input class="newsletter grey lighten-5" placeholder="email@email.com"></input>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="blue-text text-darken-2" data-translate="Helpful Links">Helpful Links</h5>
+              <ul>
+                <li><a class="blue-text text-darken-2" href="#!" data-translate="Contact Us">Contact Us</a></li>
+                <li><a class="blue-text text-darken-2" href="#!" data-translate="Meet the Team">Meet the Team</a></li>
+                <li><a class="blue-text text-darken-2" href="#!" data-translate="Search by Category">Search by Category</a></li>
+                <li><a class="blue-text text-darken-2" href="#!" data-translate="Careers">Careers</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container blue-text text-darken-2">
+          © 2023 Salud Y Sonrisas
+          <a class="blue-text text-darken-2 right" href="#!" data-translate="More">More Links</a>
+          </div>
+        </div>
+      </footer>
+                
+  <script src="../js/app.js"></script>
+  <script src="../js/translator.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
+
