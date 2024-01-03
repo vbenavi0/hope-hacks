@@ -326,8 +326,20 @@ document.addEventListener("DOMContentLoaded", function () {
             changeLanguage(selectedLanguage);
         }
     });
+
+    document.getElementById("dropdown2").addEventListener("click", function (event) {
+      if (event.target.tagName === "A") {
+          var selectedLanguage = event.target.innerText;
+          changeLanguage(selectedLanguage);
+      }
+  });
 });
   
+document.addEventListener('DOMContentLoaded', function() {
+  M.AutoInit();
+  
+});
+
     // Function to change language on click
 //     function changeLanguage(language) {
 //       var elements = document.querySelectorAll("[data-translate]");
