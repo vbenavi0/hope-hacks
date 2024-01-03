@@ -18,15 +18,16 @@
           <a href="index.html" class="brand-logo blue-text text-darken-2" >SALUD Y SONRISAS WELLNESS</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li ><a href="index.html" class="blue-text text-darken-2" data-translate="Home">Home</a></li>            <li><a href="about.html" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
+            <li ><a href="index.html" class="blue-text text-darken-2" data-translate="Home">Home</a></li>           
+             <li><a href="about.html" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
             <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
             <li class="active"><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
             <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
-              <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
+            
+          <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
             <ul id='dropdown1' class='dropdown-content'>
-              <li><a class="blue-text text-darken-2" href="#!" data-translate="English">English</a></li>
-              <li><a class="blue-text text-darken-2" href="#!" data-translate="Español">Español</a></li>
-            </ul>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
+              <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('English')">Español</a></li>
           </ul>
         </div>
       </nav>
@@ -37,20 +38,25 @@
         <li><a href="search.html" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
         <li><a href="recommend.html" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
         <li><a href="appt.html" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
-      </ul>
-        <ul class="sidenav" id="mobile-demo" class="navbar-fixed">
-          <li><a href="about.html" class="blue-text text-darken-2">About Us</a></li>
-          <li><a href="search.html" class="blue-text text-darken-2">Topics Search</a></li>
-          <li><a href="recommend.html" class="blue-text text-darken-2">Reccomendations</a></li>
-          <li><a href="appt.htm" class="blue-text text-darken-2">Online Visit</a></li>
+        <li><a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
+            <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('English')">Español</a></li>
         </ul>
+      </li>
+      </ul>
         </header>
 
         <main>
-          <h1 class="title1">Personalized Healthcare Recommendations</h1>
-          <p class="intro">Receive personalized, evidence-based recommendations for clinical preventive services. Discover the most suitable colorectal screening test tailored to your needs.</p>
+          <h1 class="title1" data-translate="Personalized">Personalized Healthcare Recommendations</h1>
+          <p class="intro" data-translate="Receive">Receive personalized, evidence-based recommendations for clinical preventive services. Discover the most suitable screening test tailored to your needs.</p>
 
-        <iframe src="https://www.health.gov/myhealthfinder?widget=true" name="myhealthfinderframe" frameborder="0" id="myhealthfinderframe" scrolling="yes" height="485" width="100%" marginheight="0" title="myhealthfinder widget" marginwidth="0"><p>Your browser does not support iframes.</p></iframe>
+          <!-- <iframe src=" " name="myhealthfinderframe" frameborder="0" id="myhealthfinderframe" class="myhealthfinderframes" scrolling="yes" height="485" width="100%" marginheight="0" title="myhealthfinder widget" marginwidth="0" data-translate="iframe"><p data-translate="browser">Your browser does not support iframes.</p></iframe> -->
+
+
+        <iframe src="https://www.health.gov/myhealthfinder?widget=true" name="myhealthfinderframe" frameborder="0" id="myhealthfinderframe" scrolling="yes" height="485" width="100%" marginheight="0" title="myhealthfinder widget" marginwidth="0" data-translate="iframe"><p data-translate="browser">Your browser does not support iframes.</p></iframe>
+        <!-- <iframe src="https://www.health.gov/espanol/myhealthfinder?widget=true" name="myhealthfinderframe" frameborder="0" id="myhealthfinderframe" scrolling="yes" height="485" width="100%" marginheight="0" title="myhealthfinder widget" marginwidth="0"><p>Your browser does not support iframes.</p></iframe> -->
+        
 
         <div class="logo">
           <img src="/public/img/saludLogo.png" alt="Salud Y Sonrisas Logo" class="saludLogo">
@@ -83,10 +89,9 @@
             </div>
           </div>
         </footer>
-                
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="/public/js/app.js"></script>
         <script src="/public/js/translator.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
 
