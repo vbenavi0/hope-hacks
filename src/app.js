@@ -87,8 +87,28 @@ app.get('', (req, res)=>{
     })
 })
 
+app.get('/index', (req, res)=>{
+    res.render('index',{ 
+    })
+})
+
 app.get('/search', (req, res)=>{
     res.render('search',{ 
+    })
+})
+
+app.get('/about', (req, res)=>{
+    res.render('about',{ 
+    })
+})
+
+app.get('/appt', (req, res)=>{
+    res.render('appt',{ 
+    })
+})
+
+app.get('/recommend', (req, res)=>{
+    res.render('recommend',{ 
     })
 })
 
