@@ -8,25 +8,32 @@ const submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', 
 function(event) {
     event.preventDefault();
-    const emailInput=document.getElementById("email")
+    const emailInput = document.getElementById("email")
     const email = emailInput.value
-    const formData = new FormData()
+    const formData = new URLSearchParams() ///creating a new class 
     formData.append("email", email)
-    console.log(formData)
+    const emailData = {
+      email: email
+    }
+    console.log(email)
     fetch("/subscribe", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
       body: formData,
     })
     .then(response => {
       if(response.ok) {
         console.log("inserted in the database")
       } else {
-        console.log("error insertted in the database: ", response.statusText)
+        console.log("Error inserted in the database: ", response.statusText)
       }
     })
     .catch(error => {
       console.log(error)
     })
+    emailInput.value = ""
     // console.log(email)
 });
 
