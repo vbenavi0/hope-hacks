@@ -76,23 +76,32 @@ topicForm.addEventListener('submit', (e)=>{
             m1.textContent = (data.error)
         } 
         else{
+          let counter = 0
             m1.textContent = ('Results:') 
             data.list.forEach(topic => {
                 let item = document.createElement('div') 
-                let title = document.createElement('h3')
+                let title = document.createElement('h4')
                 let categories = document.createElement('p')
                 let url = document.createElement('a')
+                let img = document.createElement('img')
 
                 title.textContent = topic.Title
                 item.append(title) 
 
+                img.src = topic.ImageUrl
+                item.append(img)
+
                 categories.textContent = topic.Categories
                 item.append(categories)
 
-                url.textContent = topic.AccessibleVersion
+                url.textContent = "Click to open in New Tab"
                 url.href = topic.AccessibleVersion
+                url.target = "_blank"
                 item.append(url)
 
+                counter+=1
+                item.id = 'result'+counter
+                item.classList.add('result')
                 list.append(item) 
             });
         }
@@ -156,23 +165,32 @@ categoryForm.addEventListener('submit', (e)=>{
             m1.textContent = (data.error)
         } 
         else{
-            m1.textContent = ('Results:') 
+            let counter = 0
+            m1.textContent = ('Results:')
             data.list.forEach(topic => {
                 let item = document.createElement('div') 
-                let title = document.createElement('h3')
+                let title = document.createElement('h4')
                 let categories = document.createElement('p')
                 let url = document.createElement('a')
+                let img = document.createElement('img')
 
                 title.textContent = topic.Title
                 item.append(title) 
 
+                img.src = topic.ImageUrl
+                item.append(img)
+
                 categories.textContent = topic.Categories
                 item.append(categories)
 
-                url.textContent = topic.AccessibleVersion
+                url.textContent = "Click to open in New Tab"
                 url.href = topic.AccessibleVersion
+                url.target = "_blank"
                 item.append(url)
 
+                counter+=1
+                item.id = 'result'+counter
+                item.classList.add('result')
                 list.append(item) 
             });
         }
