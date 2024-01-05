@@ -80,3 +80,12 @@ nav ul  {
       font-size: 4rem; /* Adjust as needed */
   }
 }
+
+
+/* @media only screen and (min-width: 1130px){
+nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+    height: 64px !important;
+    line-height: 64px !important;
+}
+
+} */
