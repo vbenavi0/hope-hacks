@@ -156,7 +156,7 @@ padding: 10px;
   }
   
   /* Styles for screens from 601px to 933px */
-  @media only screen and (min-width: 601px) and (max-width: 933px) {
+  @media only screen and (min-width: 601px) and (max-width: 1000px) {
 
     .brand-logo.blue-text.text-darken-2 {
         font-size: 20px !important;
@@ -189,8 +189,16 @@ padding: 10px;
         margin: 0 auto; /* Center the card within the column */
 
       }
-    
 
+      .team-row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .col {
+        width: 50%; /* Each column takes up half of the container */
+        box-sizing: border-box; /* Include padding and border in the width */
+      }
 
       .saludLogo {
         width: 80%; /* Adjust the width or other styles as needed */
@@ -214,7 +222,7 @@ padding: 10px;
   
   
   /* Styles for screens from 934px to 1200px */
-  @media only screen and (min-width: 934px) and (max-width: 1200px) {
+  @media only screen and (min-width: 1001px) and (max-width: 1200px) {
  
     .card .card-content p {
         padding: 0 !important; /* Adjust padding for smaller screens */

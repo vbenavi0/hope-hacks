@@ -14,7 +14,7 @@ const catList = require('./utils/catList')
 const pool = mysql.createPool({
 	host: 'localhost',
 	user: 'root',
-	password: 'password',
+	password: 'Amohos5901.',
 })
 
 pool.getConnection((err, connection) => {
@@ -29,13 +29,13 @@ pool.getConnection((err, connection) => {
 			return;
 		}
 
-		connection.query('USE Hope_Hacks', (err) => {
+		connection.query('USE Hope_Hacks', (err) => {   // ADD UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE
 			if (err) {
 				console.log('Error selecting the database:', err);
 				return;
 			}
 
-			const sql = 'CREATE TABLE IF NOT EXISTS newsletter (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255))';
+			const sql = 'CREATE TABLE IF NOT EXISTS newsletter (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) UNIQUE)';
 			connection.query(sql, (err) => {
 				if (err) {
 				console.log('Error creating the table:', err);
@@ -53,20 +53,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/subscribe', (req, res) => {
     const email = req.body.email;
-  
-    // Check if the email is provided
-    if (!email) {
-      return res.status(400).send('Email is required');
-    }
-  
+    console.log(req.body)
     // Insert the email into the database
     const sql = 'INSERT INTO newsletter (email) VALUES (?)';
     pool.query(sql, [email], (err, results) => {
       if (err) {
         console.log('Error inserting email into the database:', err);
-        return res.status(500).send('Internal Server Error');
       }
-  
       console.log('Email inserted into the database:', email);
       res.redirect('/');
     });

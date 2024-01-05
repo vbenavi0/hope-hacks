@@ -2,16 +2,41 @@ console.log('Client side JS file is loaded!')
 let url = window.location.href
 console.log(url)
 
-// const footerContainer = document.getElementById("footerContainer");
-// fetch("footer.html")
-//   .then(response => response.text())
-//   .then(html => { 
-//     footerContainer.innerHTML = html
-//   })
-//   .catch(error => {
-//     console.error("error", error)
-//   })
-  
+const newsletterForm = document.getElementById("newsletterForm")
+const submitButton = document.getElementById('submit');
+
+submitButton.addEventListener('click', 
+function(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById("email")
+    const email = emailInput.value
+    const formData = new URLSearchParams() ///creating a new class 
+    formData.append("email", email)
+    const emailData = {
+      email: email
+    }
+    console.log(email)
+    fetch("/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: formData,
+    })
+    .then(response => {
+      if(response.ok) {
+        console.log("inserted in the database")
+      } else {
+        console.log("Error inserted in the database: ", response.statusText)
+      }
+    })
+    .catch(error => {
+      console.log(error)
+    })
+    emailInput.value = ""
+    // console.log(email)
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   var drop = document.querySelectorAll('.dropdown-trigger');
   var instances = M.Dropdown.init(drop, {
@@ -20,15 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     hover: true
   });
 });
-
-//   const newletterSubmit = document.getElementById("newsletterForm")
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log("We are here")
-//   }
-//   console.log(newletterSubmit) 
-//   newletterSubmit.addEventListener("submit", handleSubmit)
-// });
 
   //date picker
   document.addEventListener('DOMContentLoaded', function() {
