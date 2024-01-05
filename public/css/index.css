@@ -118,10 +118,8 @@ iframe {
   }
 
 
-/* .logo {
-    display: block;
-    margin
-} */
+  .logo img{
+}
 
 .saludLogo {
     display: block;
@@ -132,37 +130,42 @@ iframe {
 @media only screen and (max-width: 320px) {
 
         .brand-logo.blue-text.text-darken-2 {
-            font-size: 12px !important; /* Use !important to override Materialize styles */
+            font-size: 9.5px !important; /* Use !important to override Materialize styles */
         }
 
-    
+    .logo img{
+        height: 250px;
+    }
+
       section.hero-logo {
         text-align: center !important;
         position: relative;
         width: 320px;
-      }
+        visibility: hidden;  
 
-    
-      .hero-logo .hero-inner p {
-        position: relative;
-        margin-top: -79px;
-        font-size: 23px;
       }
 
     .hero-logo p {
-        font-size: 2rem; /* Adjust the font size or other styles as needed */
+        font-size: 1rem; /* Adjust the font size or other styles as needed */
+        visibility: visible;
+        margin-top: -400px;
+        margin-left: 20px;
+        text-align: center;
+        width: 50px;
     }
 
     .hero-logo button {
-        width: 150px; /* Adjust the width or other styles as needed */
+        width: 90px; /* Adjust the width or other styles as needed */
         font-size: 1rem; /* Adjust the font size or other styles as needed */
-        margin-left: -26px;
-        padding: 10px;
+        margin-left: 6px;
+        margin-top: 0;
+        padding: 5px;
+        visibility: visible;
     }
 
     .slogan {
         width: 90%; /* Adjust the width or other styles as needed */
-        margin: 20px auto 10px; /* Adjust the margin or other styles as needed */
+        margin: -500px auto 30px; /* Adjust the margin or other styles as needed */
         font-size: 30px !important; /* Use !important to override Materialize styles */
 
     }
@@ -208,37 +211,43 @@ iframe {
 
 
     .brand-logo.blue-text.text-darken-2 {
-        font-size: 12px !important; /* Use !important to override Materialize styles */
+        font-size: 9.7px !important; /* Use !important to override Materialize styles */
     }
 
-
+    .logo img{
+        height: 370px;
+    }
+    
   section.hero-logo {
     text-align: left !important;
     position: relative;
+    visibility: hidden;
   }
 
 
-  .hero-logo .hero-inner p {
-    position: relative;
-    margin-top: -79px;
-    margin-left: -25px;
-    font-size: 25px;
-  }
-
-.hero-logo p {
-    font-size: 2rem; /* Adjust the font size or other styles as needed */
+  
+  .hero-logo p {
+    font-size: 1.5rem; /* Adjust the font size or other styles as needed */
+    visibility: visible;
+    text-align: center;
+    margin-top: -500px;
+    margin-left: 30px;
+    text-align: center;
+    width: 50px;
 }
 
 .hero-logo button {
-    width: 150px; /* Adjust the width or other styles as needed */
+    width: 120px; /* Adjust the width or other styles as needed */
     font-size: 1rem; /* Adjust the font size or other styles as needed */
-    margin-left: -25px;
-    padding: 10px;
+    margin-left: 25px;
+    margin-top: 0;
+    padding: 5px;
+    visibility: visible;
 }
 
 .slogan {
     width: 90%; /* Adjust the width or other styles as needed */
-    margin: 20px auto 10px; /* Adjust the margin or other styles as needed */
+    margin: -500px auto 30px; /* Adjust the margin or other styles as needed */
     font-size: 30px !important; /* Use !important to override Materialize styles */
 
 }
@@ -257,9 +266,9 @@ iframe {
 }
 
 .box h2 {
-    font-size: 1.3rem; /* Adjust the font size or other styles as needed */
-    margin-top: 25px;
-    margin-bottom: 30px;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .box iframe {
@@ -283,43 +292,48 @@ iframe {
 }
   
   /* Styles for screens from 601px to 933px */
-  @media only screen and (min-width: 601px) and (max-width: 933px) {
+  @media only screen and (min-width: 601px) and (max-width: 1000px) {
 
     .brand-logo.blue-text.text-darken-2 {
         font-size: 19px !important; /* Use !important to override Materialize styles */
     }
-
-
- 
+    .logo img{
+        height: 500px;
+    }
+    
   section.hero-logo {
     text-align: left !important;
     position: relative;
+    visibility: hidden;
   }
 
 
-  .hero-logo .hero-inner p {
-    position: relative;
-    margin-top: -100px;
-    margin-left: -40px;
-    font-size: 40px;
-  }
-
-.hero-logo p {
+  
+  .hero-logo p {
     font-size: 2rem; /* Adjust the font size or other styles as needed */
+    visibility: visible;
+    text-align: center;
+    margin-top: -600px;
+    margin-left: 90px;
+    width: 50px;
 }
 
 .hero-logo button {
-    width: 150px; /* Adjust the width or other styles as needed */
-    font-size: 1rem; /* Adjust the font size or other styles as needed */
-    margin-left: -15px;
-    padding: 10px;
+    width: 120px; /* Adjust the width or other styles as needed */
+    font-size: 1.3rem; /* Adjust the font size or other styles as needed */
+    margin-left: 90px;
+    margin-top: 0;
+    padding: 5px;
+    visibility: visible;
 }
 
 .slogan {
     width: 90%; /* Adjust the width or other styles as needed */
-    margin: 20px auto 10px; /* Adjust the margin or other styles as needed */
-    font-size: 37px !important; /* Use !important to override Materialize styles */
+    margin: -490px auto 10px; /* Adjust the margin or other styles as needed */
+    font-size: 30px !important; /* Use !important to override Materialize styles */
+
 }
+
 
 .tools {
     flex-direction: column; /* Adjust the flex direction or other styles as needed */
@@ -354,11 +368,14 @@ iframe {
   }
   
   /* Styles for screens from 934px to 1200px */
-  @media only screen and (min-width: 934px) and (max-width: 1200px) {
+  @media only screen and (min-width: 1001px) and (max-width: 1200px) {
     .brand-logo.blue-text.text-darken-2 {
         font-size: 30px !important; /* Use !important to override Materialize styles */
     }
-
+    .logo img{
+        visibility: hidden;
+        position: fixed;
+    }
 
   section.hero-logo {
     text-align: left !important;
@@ -391,7 +408,7 @@ iframe {
     width: 75%; /* Adjust the width or other styles as needed */
     margin: 20px auto 10px; /* Adjust the margin or other styles as needed */
     font-size: 42px !important; /* Use !important to override Materialize styles */
-
+    
 }
 
 .box {
@@ -427,7 +444,10 @@ iframe {
   /* Styles for screens from 934px to 1200px */
     /* Styles for screens from 934px to 1200px */
     @media only screen and (min-width: 1200px) {
-   
+        .logo img{
+            visibility: hidden;
+            position: fixed;
+        }
     
       section.hero-logo {
         text-align: left !important;
@@ -437,7 +457,7 @@ iframe {
     
       .hero-logo .hero-inner p {
         position: relative;
-        margin-top: -50px;
+        margin-top: -120px;
         margin-left: 50px;
         font-size: 50px;
         padding: 0;
@@ -445,13 +465,13 @@ iframe {
       }
     
     .hero-logo p {
-        font-size: 2rem; /* Adjust the font size or other styles as needed */
+        font-size: 2rem; 
     }
     
     .hero-logo button {
         width: 150px; /* Adjust the width or other styles as needed */
         font-size: 1rem; /* Adjust the font size or other styles as needed */
-        margin-left: 140px;
+        margin-left:100px;
         margin-top: 0;
         padding: 10px;
     }
