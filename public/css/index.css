@@ -82,6 +82,7 @@
     width: 80%;
     margin: 20px auto;
     text-transform: uppercase;
+    font-size: 50px;
 }
 
 .box iframe {
@@ -150,65 +151,64 @@ iframe {
       }
 
     .hero-logo p {
-        font-size: 2rem; /* Adjust the font size or other styles as needed */
+        font-size: 2rem; 
     }
 
     .hero-logo button {
-        width: 150px; /* Adjust the width or other styles as needed */
-        font-size: 1rem; /* Adjust the font size or other styles as needed */
+        width: 150px; 
+        font-size: 1rem; 
         margin-left: -26px;
         padding: 10px;
     }
 
     .slogan {
-        width: 90%; /* Adjust the width or other styles as needed */
-        margin: 20px auto 10px; /* Adjust the margin or other styles as needed */
-        font-size: 30px !important; /* Use !important to override Materialize styles */
+        width: 90%; 
+        margin: 20px auto 10px; 
+        font-size: 30px !important; 
 
     }
 
     .tools {
-        flex-direction: column; /* Adjust the flex direction or other styles as needed */
+        flex-direction: column; 
     }
 
     .box {
-        width: 70%; /* Adjust the width or other styles as needed */
-        margin: 20px auto; /* Adjust the margin or other styles as needed */
+        width: 70%; 
+        margin: 20px auto; 
         height: 350px;
         padding: 10px;
-
     }
 
     .box h2 {
-        font-size: 1.5rem; /* Adjust the font size or other styles as needed */
+        font-size: 1.5rem; 
         margin-top: 30px;
         margin-bottom: 10px;
     }
 
     .box iframe {
-        width: 100%; /* Adjust the width or other styles as needed */
-        height: auto; /* Adjust the height or other styles as needed */
+        width: 100%; 
+        height: auto; 
         padding: 15px;
         margin-top: 20px;
     }
 
     .redirect {
-        width: 70%; /* Adjust the width or other styles as needed */
-        margin: 20px auto; /* Adjust the margin or other styles as needed */
+        width: 70%; 
+        margin: 20px auto; 
         padding: 20px;
         margin-top: 25px;
     }
 
     .saludLogo {
-        width: 80%; /* Adjust the width or other styles as needed */
-        margin: 20px auto; /* Adjust the margin or other styles as needed */
+        width: 80%; 
+        margin: 20px auto; 
     }
 }
 @media only screen and (min-width: 321px) and (max-width: 600px) {
 
 
     .brand-logo.blue-text.text-darken-2 {
-        font-size: 12px !important; /* Use !important to override Materialize styles */
+        font-size: 12px !important; 
     }
 
 
@@ -226,67 +226,67 @@ iframe {
   }
 
 .hero-logo p {
-    font-size: 2rem; /* Adjust the font size or other styles as needed */
+    font-size: 2rem;
 }
 
 .hero-logo button {
-    width: 150px; /* Adjust the width or other styles as needed */
-    font-size: 1rem; /* Adjust the font size or other styles as needed */
+    width: 150px; 
+    font-size: 1rem; 
     margin-left: -25px;
     padding: 10px;
 }
 
 .slogan {
-    width: 90%; /* Adjust the width or other styles as needed */
-    margin: 20px auto 10px; /* Adjust the margin or other styles as needed */
-    font-size: 30px !important; /* Use !important to override Materialize styles */
+    width: 90%; 
+    margin: 20px auto 10px;
+    font-size: 30px !important;
 
 }
 
 .tools {
-    flex-direction: column; /* Adjust the flex direction or other styles as needed */
+    flex-direction: column; 
 }
 
 
 .box {
-    width: 70% !important; /* Adjust the width or other styles as needed */
-    margin: 20px auto; /* Adjust the margin or other styles as needed */
+    width: 70% !important;
+    margin: 20px auto;
     height: 350px;
     padding: 10px;
 
 }
 
 .box h2 {
-    font-size: 1.3rem; /* Adjust the font size or other styles as needed */
+    font-size: 1.3rem; 
     margin-top: 25px;
     margin-bottom: 30px;
 }
 
 .box iframe {
-    width: 100%; /* Adjust the width or other styles as needed */
-    height: auto; /* Adjust the height or other styles as needed */
+    width: 100%; 
+    height: auto; 
     padding: 15px;
     margin-top: 20px;
 }
 
 .redirect {
-    width: 70%; /* Adjust the width or other styles as needed */
-    margin: 20px auto; /* Adjust the margin or other styles as needed */
+    width: 70%; /
+    margin: 20px auto; 
     padding: 20px;
     margin-top: 25px;
 }
 
 .saludLogo {
-    width: 80%; /* Adjust the width or other styles as needed */
-    margin: 20px auto; /* Adjust the margin or other styles as needed */
+    width: 80%; 
+    margin: 20px auto; 
 }
 }
   
-  /* Styles for screens from 601px to 933px */
-  @media only screen and (min-width: 601px) and (max-width: 933px) {
+
+@media only screen and (min-width: 601px) and (max-width: 933px) {
 
     .brand-logo.blue-text.text-darken-2 {
-        font-size: 19px !important; /* Use !important to override Materialize styles */
+        font-size: 19px !important; 
     }
 
 
@@ -305,58 +305,58 @@ iframe {
   }
 
 .hero-logo p {
-    font-size: 2rem; /* Adjust the font size or other styles as needed */
+    font-size: 2rem; 
 }
 
 .hero-logo button {
-    width: 150px; /* Adjust the width or other styles as needed */
-    font-size: 1rem; /* Adjust the font size or other styles as needed */
+    width: 150px; 
+    font-size: 1rem; 
     margin-left: -15px;
     padding: 10px;
 }
 
 .slogan {
-    width: 90%; /* Adjust the width or other styles as needed */
-    margin: 20px auto 10px; /* Adjust the margin or other styles as needed */
-    font-size: 37px !important; /* Use !important to override Materialize styles */
+    width: 90%;
+    margin: 20px auto 10px; 
+    font-size: 37px !important;
 }
 
 .tools {
-    flex-direction: column; /* Adjust the flex direction or other styles as needed */
+    flex-direction: column;
 }
 
 .box {
-    width: 60%; /* Adjust the width or other styles as needed */
-    margin: 20px auto; /* Adjust the margin or other styles as needed */
+    width: 60%;
+    margin: 20px auto; 
     height: 450px;
     padding: 20px;
     padding-bottom: 30px;
 }
 
 .box h2 {
-    font-size: 1.5rem; /* Adjust the font size or other styles as needed */
+    font-size: 1.5rem; 
 }
 
 .box iframe {
-    width: 100%; /* Adjust the width or other styles as needed */
-    height: 65%; /* Adjust the height or other styles as needed */
+    width: 100%; 
+    height: 65%; 
 }
 
 .redirect {
-    width: 80%; /* Adjust the width or other styles as needed */
-    margin: 30px auto; /* Adjust the margin or other styles as needed */
+    width: 80%; 
+    margin: 30px auto; 
 }
 
 .saludLogo {
-    width: 80%; /* Adjust the width or other styles as needed */
-    margin: 40px auto; /* Adjust the margin or other styles as needed */
+    width: 80%; 
+    margin: 40px auto; 
 }
   }
   
-  /* Styles for screens from 934px to 1200px */
+
   @media only screen and (min-width: 934px) and (max-width: 1200px) {
     .brand-logo.blue-text.text-darken-2 {
-        font-size: 30px !important; /* Use !important to override Materialize styles */
+        font-size: 30px !important; 
     }
 
 
@@ -376,59 +376,54 @@ iframe {
   }
 
 .hero-logo p {
-    font-size: 2rem; /* Adjust the font size or other styles as needed */
+    font-size: 2rem; 
 }
 
 .hero-logo button {
-    width: 150px; /* Adjust the width or other styles as needed */
-    font-size: 1rem; /* Adjust the font size or other styles as needed */
+    width: 150px; 
+    font-size: 1rem; 
     margin-left: 70px;
     margin-top: 0;
     padding: 10px;
 }
 
 .slogan {
-    width: 75%; /* Adjust the width or other styles as needed */
-    margin: 20px auto 10px; /* Adjust the margin or other styles as needed */
-    font-size: 42px !important; /* Use !important to override Materialize styles */
+    width: 75%; 
+    margin: 20px auto 10px; 
+    font-size: 42px !important; 
 
 }
 
 .box {
-    width: 30%; /* Adjust the width or other styles as needed */
-    margin: 10px auto; /* Adjust the margin or other styles as needed */
+    width: 30%; 
+    margin: 10px auto; 
     padding: 20px;
     height: 450px;
 }
 
 .box h2 {
-    font-size: 1.5rem; /* Adjust the font size or other styles as needed */
-    margin: px;
+    font-size: 1.5rem; 
 }
 
 .box iframe {
-    width: 100%; /* Adjust the width or other styles as needed */
-    height: 60%; /* Adjust the height or other styles as needed */
+    width: 100%; 
+    height: 60%; 
 }
 
 .redirect {
-    width: 80%; /* Adjust the width or other styles as needed */
-    margin: 20px auto; /* Adjust the margin or other styles as needed */
+    width: 80%; 
+    margin: 20px auto; 
 }
 
 .saludLogo {
-    width: 40%; /* Adjust the width or other styles as needed */
-    margin: 20px auto; /* Adjust the margin or other styles as needed */
+    width: 40%; 
+    margin: 20px auto; 
 }
 
   }
- 
-  
-  /* Styles for screens from 934px to 1200px */
-    /* Styles for screens from 934px to 1200px */
-    @media only screen and (min-width: 1200px) {
-   
-    
+
+@media only screen and (min-width: 1201px) and (max-width: 1600px) {
+
       section.hero-logo {
         text-align: left !important;
         position: relative;
@@ -445,19 +440,19 @@ iframe {
       }
     
     .hero-logo p {
-        font-size: 2rem; /* Adjust the font size or other styles as needed */
+        font-size: 2rem; 
     }
     
     .hero-logo button {
-        width: 150px; /* Adjust the width or other styles as needed */
-        font-size: 1rem; /* Adjust the font size or other styles as needed */
+        width: 150px; 
+        font-size: 1rem; 
         margin-left: 140px;
         margin-top: 0;
         padding: 10px;
     }
 
     .box h2 {
-        font-size: 20px;
+        font-size: 32px;
         text-align: center;
         width: 80%;
         margin: 20px auto;
@@ -465,7 +460,7 @@ iframe {
     }
    
     .box iframe {
-        width: 85%; /* Adjust the width or other styles as needed */
-    }
+        width: 85%; 
     
       }
+    }
