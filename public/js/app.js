@@ -2,14 +2,18 @@ console.log('Client side JS file is loaded!')
 let url = window.location.href
 console.log(url)
 
+const newsletterForm = document.getElementById("newsletterForm")
 document.addEventListener('DOMContentLoaded', function () {
   const submitButton = document.getElementById('submit');
 
   submitButton.addEventListener('click', 
   function(event) {
      event.preventDefault();
+     newsletterForm.reset();
   });
 });
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
   var drop = document.querySelectorAll('.dropdown-trigger');
