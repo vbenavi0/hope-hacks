@@ -14,7 +14,7 @@ const catList = require('./utils/catList')
 const pool = mysql.createPool({
 	host: 'localhost',
 	user: 'root',
-	password: 'Amohos5901.',
+	password: 'password',
 })
 
 pool.getConnection((err, connection) => {
