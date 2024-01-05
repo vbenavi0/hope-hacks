@@ -51,26 +51,26 @@ pool.getConnection((err, connection) => {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.post('/subscribe', (req, res) => {
-//     const email = req.body.email;
+app.post('/subscribe', (req, res) => {
+    const email = req.body.email;
     
-//     const sqlCheckDuplicate = `SELECT * FROM newsletter WHERE email = ${email}`;
+    const sqlCheckDuplicate = `SELECT * FROM newsletter WHERE email = ${email}`;
 
-//     pool.query(sqlCheckDuplicate, [email], (err, results) => {
-//         if (err) {
-//             console.log('Error checking for duplicate email:', err);
-//             const errorMessage = 'Error inserting email into the database';
-//             res.send(`<span class="error">${errorMessage}</span>`);
-//             return;
-//         }
-//         console.log('Email inserted into the database:', email);
-//         res.redirect('/');
-//   });
-// });
+    pool.query(sqlCheckDuplicate, [email], (err, results) => {
+        if (err) {
+            console.log('Error checking for duplicate email:', err);
+            const errorMessage = 'Error inserting email into the database';
+            res.send(`<span class="error">${errorMessage}</span>`);
+            return;
+        }
+        console.log('Email inserted into the database:', email);
+        res.redirect('/');
+  });
+});
 
 app.post('/subscribe', (req, res) => {
     const email = req.body.email;
-
+    console.log(req.body)
     // Insert the email into the database
     const sql = 'INSERT INTO newsletter (email) VALUES (?)';
     pool.query(sql, [email], (err, results) => {

@@ -3,17 +3,32 @@ let url = window.location.href
 console.log(url)
 
 const newsletterForm = document.getElementById("newsletterForm")
-document.addEventListener('DOMContentLoaded', function () {
-  const submitButton = document.getElementById('submit');
+const submitButton = document.getElementById('submit');
 
-  submitButton.addEventListener('click', 
-  function(event) {
-     event.preventDefault();
-     newsletterForm.reset();
-  });
+submitButton.addEventListener('click', 
+function(event) {
+    event.preventDefault();
+    const emailInput=document.getElementById("email")
+    const email = emailInput.value
+    const formData = new FormData()
+    formData.append("email", email)
+    console.log(formData)
+    fetch("/subscribe", {
+      method: "POST",
+      body: formData,
+    })
+    .then(response => {
+      if(response.ok) {
+        console.log("inserted in the database")
+      } else {
+        console.log("error insertted in the database: ", response.statusText)
+      }
+    })
+    .catch(error => {
+      console.log(error)
+    })
+    // console.log(email)
 });
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
   var drop = document.querySelectorAll('.dropdown-trigger');
