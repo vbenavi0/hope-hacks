@@ -6,7 +6,7 @@
 }
 
 .intro {
-    margin: 40px auto;
+    margin: 40px auto 0;
     text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
@@ -17,7 +17,7 @@
 
 .card {
     width: 60%;
-    margin: 100px auto;
+    margin: 50px auto;
 }
 
 .card p {
@@ -42,6 +42,50 @@
     margin: auto;
     text-align: center;
 }
+
+#message1 {
+  text-align: center;
+  font-weight: 700;
+  color: #252f9c;
+}
+
+.result {
+  text-align: center;
+  background-color: #cfe5ff;
+  margin: 0 auto 20px;
+  width: 30%;
+  height: 500px;
+  padding: 20px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-shadow: 7px 7px 7px #252f9c;
+}
+
+#resultList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 100px;
+}
+
+.result h4 {
+  color: #252f9c;
+  text-shadow: 2px 2px 2px #000;
+  margin-bottom: 20px;
+}
+
+.result img {
+  width: 180px;
+  height: 180px;
+  border-radius: 5px;
+}
+
+.result a {
+  text-decoration: underline;
+  font-size: 1.3rem;
+}
+
+
 
 @media only screen and (max-width: 320px) {
 
@@ -140,9 +184,6 @@
         padding: 0 !important;
         font-size: 20px !important; 
       }  
-        
-          
-   
  
   }
   
