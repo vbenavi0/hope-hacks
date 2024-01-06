@@ -2,16 +2,41 @@ console.log('Client side JS file is loaded!')
 let url = window.location.href
 console.log(url)
 
-// const footerContainer = document.getElementById("footerContainer");
-// fetch("footer.html")
-//   .then(response => response.text())
-//   .then(html => { 
-//     footerContainer.innerHTML = html
-//   })
-//   .catch(error => {
-//     console.error("error", error)
-//   })
-  
+const newsletterForm = document.getElementById("newsletterForm")
+const submitButton = document.getElementById('submit');
+
+submitButton.addEventListener('click', 
+function(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById("email")
+    const email = emailInput.value
+    const formData = new URLSearchParams() ///creating a new class 
+    formData.append("email", email)
+    const emailData = {
+      email: email
+    }
+    console.log(email)
+    fetch("/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: formData,
+    })
+    .then(response => {
+      if(response.ok) {
+        console.log("inserted in the database")
+      } else {
+        console.log("Error inserted in the database: ", response.statusText)
+      }
+    })
+    .catch(error => {
+      console.log(error)
+    })
+    emailInput.value = ""
+    // console.log(email)
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   var drop = document.querySelectorAll('.dropdown-trigger');
   var instances = M.Dropdown.init(drop, {
@@ -20,15 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     hover: true
   });
 });
-
-//   const newletterSubmit = document.getElementById("newsletterForm")
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log("We are here")
-//   }
-//   console.log(newletterSubmit) 
-//   newletterSubmit.addEventListener("submit", handleSubmit)
-// });
 
   //date picker
   document.addEventListener('DOMContentLoaded', function() {
@@ -55,52 +71,11 @@ const list = document.querySelector('#resultList')
 const catLang = document.querySelector("#catLang")
 const catDrop = document.querySelector('#categories')
 const imports = new Event("imports");
+var lang = 'en'
+var enCats = []
+var esCats = []
 
-topicForm.addEventListener('submit', (e)=>{
-    e.preventDefault()
-
-    console.log('topic form submitted')
-
-    m1.textContent = ('loading') //display loading text
-    m2.textContent = ('') //reset display
-    list.innerHTML = ('') //reset list
-
-    const keyWord = topicInput.value
-    const lang = 'en'
-    console.log('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord)
-    fetch('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord).then((response)=>{
-      response.json()
-    .then((data)=>{
-      console.log(data)
-        if(data.error){ //if server error, display proper error
-            m1.textContent = (data.error)
-        } 
-        else{
-            m1.textContent = ('Results:') 
-            data.list.forEach(topic => {
-                let item = document.createElement('div') 
-                let title = document.createElement('h3')
-                let categories = document.createElement('p')
-                let url = document.createElement('a')
-
-                title.textContent = topic.Title
-                item.append(title) 
-
-                categories.textContent = topic.Categories
-                item.append(categories)
-
-                url.textContent = topic.AccessibleVersion
-                url.href = topic.AccessibleVersion
-                item.append(url)
-
-                list.append(item) 
-            });
-        }
-      })
-  })
-})
-
-if(url.includes('/search')){
+function importCats(){
   console.log('category import')
   fetch('http://localhost:3000/catList?lang=en').then((response)=>{
       response.json()
@@ -111,44 +86,101 @@ if(url.includes('/search')){
         } 
         else{
             data.list.forEach(category => {
-                let item = document.createElement('option') 
-
-                item.value = category.Id
-                item.textContent = category.Title
-
-                catDrop.append(item)
-                document.dispatchEvent(imports)
+              // console.log(category)
+              enCats.push(category)
           });
-          console.log('Categories Imported')
+          changeCats()
         }
       })
+    }).then(()=>{console.log('En Categories Imported')
+    console.log(enCats)})
+
+    fetch('http://localhost:3000/catList?lang=es').then((response)=>{
+      response.json()
+    .then((data)=>{
+      console.log(data)
+        if(data.error){ //if server error, display proper error
+            return console.log(data.error)
+        } 
+        else{
+            data.list.forEach(category => {
+              esCats.push(category)
+          });
+          changeCats()
+        }
+      })
+    }).then(()=>{console.log('Es Categories Imported')
+    console.log(esCats)
     })
 }
 
-document.addEventListener('imports', function() {
-  var drops = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(drops, {
+function changeCats(){
+  console.log('category change')
+  if(lang == 'es'){
+    catDrop.innerHTML = '<option value="" disabled selected data-translate="Choose Category">Elegir Categoria</option>'
+    esCats.forEach(category => {
+      let item = document.createElement('option') 
+
+      item.value = category.Id
+      item.textContent = category.Title
+
+      catDrop.append(item)
+    })
+  }
+  else{
+    catDrop.innerHTML = '<option value="" disabled selected data-translate="Choose Category">Choose Category</option>'
+    console.log(enCats)
+    enCats.forEach(category => {
+      let item = document.createElement('option') 
+
+      item.value = category.Id
+      item.textContent = category.Title
+
+      catDrop.append(item)
+    })
+  }
+  document.dispatchEvent(imports)
+}
+
+function changeLanguage(language){
+  if(language==='English'){
+    lang = 'en'
+  }
+  else if(language==='Español'){
+    lang = 'es'
+  }
+  list.innerHTML = ""
+  m1.innerHTML = ""
+  m2.innerHTML = ""
+  changeCats()
+}
+
+if(url.includes('/search')){
+  importCats()
+
+  document.addEventListener('imports', function() {
+    var drops = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(drops, {
+    });
   });
-});
 
+  topicForm.addEventListener('submit', (e)=>{
+    e.preventDefault()
 
-categoryForm.addEventListener('submit', (e)=>{
-  e.preventDefault()
+    console.log('topic form submitted')
 
-  console.log('category form submitted')
+    if(lang == 'es'){
+      m1.textContent = ('Cargando...') //display loading text in spanish
+    }
+    else{
+      m1.textContent = ('Loading...') //display loading text in english
+    }
+    m2.textContent = ('') //reset display
+    list.innerHTML = ('') //reset list
 
-  const cat = catDrop.value
-  const lang = 'en'
-
-  console.log(lang)
-  console.log(cat)
-
-  m1.textContent = ('loading') //display loading text
-  m2.textContent = ('') //reset display
-  list.innerHTML = ('') //reset list
-
-  console.log('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat)
-    fetch('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat).then((response)=>{
+    const keyWord = topicInput.value
+    console.log('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord)
+    fetch('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord).then((response)=>{
       response.json()
     .then((data)=>{
       console.log(data)
@@ -156,27 +188,117 @@ categoryForm.addEventListener('submit', (e)=>{
             m1.textContent = (data.error)
         } 
         else{
+          let counter = 0
+          if(lang == 'es'){
+            m1.textContent = ('Resultados:')
+          }
+          else{
             m1.textContent = ('Results:') 
+          }
             data.list.forEach(topic => {
                 let item = document.createElement('div') 
-                let title = document.createElement('h3')
+                let title = document.createElement('h4')
                 let categories = document.createElement('p')
                 let url = document.createElement('a')
+                let img = document.createElement('img')
 
                 title.textContent = topic.Title
                 item.append(title) 
 
+                img.src = topic.ImageUrl
+                item.append(img)
+
                 categories.textContent = topic.Categories
                 item.append(categories)
 
-                url.textContent = topic.AccessibleVersion
+                if(lang == 'es'){
+                  url.textContent = "Abrir en una nueva página"
+                }
+                else{
+                  url.textContent = "Click to open in New Tab"
+                }
                 url.href = topic.AccessibleVersion
+                url.target = "_blank"
                 item.append(url)
 
+                counter+=1
+                item.id = 'result'+counter
+                item.classList.add('result')
                 list.append(item) 
             });
-        }
-      })
+          }
+        })
     })
-})
+  })
 
+  categoryForm.addEventListener('submit', (e)=>{
+    e.preventDefault()
+  
+    console.log('category form submitted')
+  
+    const cat = catDrop.value
+  
+    console.log(lang)
+    console.log(cat)
+  
+    if(lang == 'es'){
+      m1.textContent = ('Cargando...') //display loading text in spanish
+    }
+    else{
+      m1.textContent = ('Loading...') //display loading text in english
+    }
+    m2.textContent = ('') //reset display
+    list.innerHTML = ('') //reset list
+  
+    console.log('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat)
+      fetch('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat).then((response)=>{
+        response.json()
+      .then((data)=>{
+        console.log(data)
+          if(data.error){ //if server error, display proper error
+              m1.textContent = (data.error)
+          } 
+          else{
+              let counter = 0
+              if(lang == 'es'){
+                m1.textContent = ('Resultados:')
+              }
+              else{
+                m1.textContent = ('Results:') 
+              }
+              data.list.forEach(topic => {
+                  let item = document.createElement('div') 
+                  let title = document.createElement('h4')
+                  let categories = document.createElement('p')
+                  let url = document.createElement('a')
+                  let img = document.createElement('img')
+  
+                  title.textContent = topic.Title
+                  item.append(title) 
+  
+                  img.src = topic.ImageUrl
+                  item.append(img)
+  
+                  categories.textContent = topic.Categories
+                  item.append(categories)
+  
+                  if(lang == 'es'){
+                    url.textContent = "Abrir en una nueva página"
+                  }
+                  else{
+                    url.textContent = "Click to open in New Tab"
+                  }
+                  url.href = topic.AccessibleVersion
+                  url.target = "_blank"
+                  item.append(url)
+  
+                  counter+=1
+                  item.id = 'result'+counter
+                  item.classList.add('result')
+                  list.append(item) 
+              });
+          }
+        })
+      })
+  })
+}

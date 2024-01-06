@@ -115,14 +115,12 @@ iframe {
 }
 .logo img {
     max-width: 100%;
-    height: auto; /* Ensures the aspect ratio is maintained */
+    height: auto; 
   }
 
 
-/* .logo {
-    display: block;
-    margin
-} */
+  .logo img{
+}
 
 .saludLogo {
     display: block;
@@ -133,39 +131,43 @@ iframe {
 @media only screen and (max-width: 320px) {
 
         .brand-logo.blue-text.text-darken-2 {
-            font-size: 12px !important; /* Use !important to override Materialize styles */
+            font-size: 9.5px !important; 
         }
 
-    
+    .logo img{
+        height: 250px;
+    }
+
       section.hero-logo {
         text-align: center !important;
         position: relative;
         width: 320px;
-      }
+        visibility: hidden;  
 
-    
-      .hero-logo .hero-inner p {
-        position: relative;
-        margin-top: -79px;
-        font-size: 23px;
       }
 
     .hero-logo p {
-        font-size: 2rem; 
+        font-size: 1rem;
+        visibility: visible;
+        margin-top: -400px;
+        margin-left: 20px;
+        text-align: center;
+        width: 50px;
     }
 
     .hero-logo button {
-        width: 150px; 
-        font-size: 1rem; 
-        margin-left: -26px;
-        padding: 10px;
+        width: 90px;
+        font-size: 1rem;
+        margin-left: 6px;
+        margin-top: 0;
+        padding: 5px;
+        visibility: visible;
     }
 
     .slogan {
-        width: 90%; 
-        margin: 20px auto 10px; 
-        font-size: 30px !important; 
-
+        width: 90%;
+        margin: -500px auto 30px;
+        font-size: 30px !important;
     }
 
     .tools {
@@ -208,39 +210,42 @@ iframe {
 
 
     .brand-logo.blue-text.text-darken-2 {
-        font-size: 12px !important; 
+        font-size: 9.7px !important;
     }
 
-
+    .logo img{
+        height: 370px;
+    }
+    
   section.hero-logo {
     text-align: left !important;
     position: relative;
+    visibility: hidden;
   }
-
-
-  .hero-logo .hero-inner p {
-    position: relative;
-    margin-top: -79px;
-    margin-left: -25px;
-    font-size: 25px;
-  }
-
-.hero-logo p {
-    font-size: 2rem;
+  
+  .hero-logo p {
+    font-size: 1.5rem; 
+    visibility: visible;
+    text-align: center;
+    margin-top: -500px;
+    margin-left: 30px;
+    text-align: center;
+    width: 50px;
 }
 
 .hero-logo button {
-    width: 150px; 
+    width: 120px;
     font-size: 1rem; 
-    margin-left: -25px;
-    padding: 10px;
+    margin-left: 25px;
+    margin-top: 0;
+    padding: 5px;
+    visibility: visible;
 }
 
 .slogan {
     width: 90%; 
-    margin: 20px auto 10px;
-    font-size: 30px !important;
-
+    margin: -500px auto 30px; 
+    font-size: 30px !important; 
 }
 
 .tools {
@@ -257,9 +262,9 @@ iframe {
 }
 
 .box h2 {
-    font-size: 1.3rem; 
-    margin-top: 25px;
-    margin-bottom: 30px;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .box iframe {
@@ -282,44 +287,45 @@ iframe {
 }
 }
   
-
-@media only screen and (min-width: 601px) and (max-width: 933px) {
+  @media only screen and (min-width: 601px) and (max-width: 1000px) {
 
     .brand-logo.blue-text.text-darken-2 {
         font-size: 19px !important; 
     }
-
-
- 
+    .logo img{
+        height: 500px;
+    }
+    
   section.hero-logo {
     text-align: left !important;
     position: relative;
+    visibility: hidden;
   }
 
-
-  .hero-logo .hero-inner p {
-    position: relative;
-    margin-top: -100px;
-    margin-left: -40px;
-    font-size: 40px;
-  }
-
-.hero-logo p {
+  .hero-logo p {
     font-size: 2rem; 
+    visibility: visible;
+    text-align: center;
+    margin-top: -600px;
+    margin-left: 90px;
+    width: 50px;
 }
 
 .hero-logo button {
-    width: 150px; 
-    font-size: 1rem; 
-    margin-left: -15px;
-    padding: 10px;
+    width: 120px; 
+    font-size: 1.3rem; 
+    margin-left: 90px;
+    margin-top: 0;
+    padding: 5px;
+    visibility: visible;
 }
 
 .slogan {
-    width: 90%;
-    margin: 20px auto 10px; 
-    font-size: 37px !important;
+    width: 90%; 
+    margin: -490px auto 10px;
+    font-size: 30px !important; 
 }
+
 
 .tools {
     flex-direction: column;
@@ -354,11 +360,14 @@ iframe {
   }
   
 
-  @media only screen and (min-width: 934px) and (max-width: 1200px) {
+  @media only screen and (min-width: 1001px) and (max-width: 1200px) {
     .brand-logo.blue-text.text-darken-2 {
         font-size: 30px !important; 
     }
-
+    .logo img{
+        visibility: hidden;
+        position: fixed;
+    }
 
   section.hero-logo {
     text-align: left !important;
@@ -388,10 +397,9 @@ iframe {
 }
 
 .slogan {
-    width: 75%; 
-    margin: 20px auto 10px; 
+    width: 75%;
+    margin: 20px auto 10px;
     font-size: 42px !important; 
-
 }
 
 .box {
@@ -422,8 +430,12 @@ iframe {
 
   }
 
-@media only screen and (min-width: 1201px) and (max-width: 1600px) {
-
+    @media only screen and (min-width: 1200px) {
+        .logo img{
+            visibility: hidden;
+            position: fixed;
+        }
+    
       section.hero-logo {
         text-align: left !important;
         position: relative;
@@ -432,7 +444,7 @@ iframe {
     
       .hero-logo .hero-inner p {
         position: relative;
-        margin-top: -50px;
+        margin-top: -120px;
         margin-left: 50px;
         font-size: 50px;
         padding: 0;
@@ -444,9 +456,9 @@ iframe {
     }
     
     .hero-logo button {
-        width: 150px; 
+        width: 150px;
         font-size: 1rem; 
-        margin-left: 140px;
+        margin-left:100px;
         margin-top: 0;
         padding: 10px;
     }
