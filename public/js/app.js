@@ -63,12 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const topicForm = document.querySelector('#topicSearchForm')
 const categoryForm = document.querySelector('#categorySearchForm')
-const keyLang = document.querySelector("#keyLang")
 const topicInput = document.querySelector('#icon_prefix')
 const m1 = document.querySelector('#message1')
 const m2 = document.querySelector('#message2')
 const list = document.querySelector('#resultList')
-const catLang = document.querySelector("#catLang")
 const catDrop = document.querySelector('#categories')
 const imports = new Event("imports");
 var lang = 'en'
@@ -123,6 +121,7 @@ function changeCats(){
 
       item.value = category.Id
       item.textContent = category.Title
+      item.id = 'esCat'+category.Id
 
       catDrop.append(item)
     })
@@ -135,6 +134,7 @@ function changeCats(){
 
       item.value = category.Id
       item.textContent = category.Title
+      item.id = 'enCat'+category.Id
 
       catDrop.append(item)
     })
@@ -167,18 +167,24 @@ if(url.includes('/search')){
   topicForm.addEventListener('submit', (e)=>{
     e.preventDefault()
 
-    console.log('topic form submitted')
-
-    if(lang == 'es'){
-      m1.textContent = ('Cargando...') //display loading text in spanish
-    }
-    else{
-      m1.textContent = ('Loading...') //display loading text in english
-    }
+    console.log('keyword form submitted')
     m2.textContent = ('') //reset display
     list.innerHTML = ('') //reset list
-
     const keyWord = topicInput.value
+    if(lang == 'es' && keyWord == ''){
+      return m1.textContent = ('Por favor proporcione una palabra clave')
+    }
+    else if(keyWord == ''){
+      return m1.textContent = ('Please provide a keyword')
+    }
+
+    if(lang == 'es'){
+      m1.textContent = (`Buscando por palabra clave "${keyWord}"...`) //display loading text in spanish
+    }
+    else{
+      m1.textContent = (`Searching by keyword "${keyWord}"...`) //display loading text in english
+    }
+
     console.log('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord)
     fetch('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord).then((response)=>{
       response.json()
@@ -190,10 +196,10 @@ if(url.includes('/search')){
         else{
           let counter = 0
           if(lang == 'es'){
-            m1.textContent = ('Resultados:')
+            m1.textContent = (`Resultados para "${keyWord}":`)
           }
           else{
-            m1.textContent = ('Results:') 
+            m1.textContent = (`Results for "${keyWord}":`) 
           }
             data.list.forEach(topic => {
                 let item = document.createElement('div') 
@@ -233,22 +239,43 @@ if(url.includes('/search')){
 
   categoryForm.addEventListener('submit', (e)=>{
     e.preventDefault()
-  
+    var catWord ='';
     console.log('category form submitted')
-  
-    const cat = catDrop.value
-  
-    console.log(lang)
-    console.log(cat)
-  
-    if(lang == 'es'){
-      m1.textContent = ('Cargando...') //display loading text in spanish
-    }
-    else{
-      m1.textContent = ('Loading...') //display loading text in english
-    }
     m2.textContent = ('') //reset display
     list.innerHTML = ('') //reset list
+  
+    const cat = catDrop.value
+    if(lang == 'es'){
+      try{catWord = document.getElementById('esCat'+catDrop.value).innerText}
+      catch{return m1.textContent = ('Porfavor elegir una categoría') }
+    }
+    else{
+      try{catWord = document.getElementById('enCat'+catDrop.value).innerText}
+      catch{return m1.textContent = ('Please select a category')}
+    }
+    // try{
+    //   if(lang == 'es'){
+    //     const catWord = document.getElementById('esCat'+catDrop.value).innerText
+    //   }
+    //   else{
+    //     const catWord = document.getElementById('enCat'+catDrop.value).innerText
+    //   }
+    // }
+    // catch{
+    //   if(lang == 'es'){
+    //     return m1.textContent = ('Porfavor elegir una categoría') 
+    //   }
+    //   else{
+    //     return m1.textContent = ('Please select a category') 
+    //   }
+    // }
+  
+    if(lang == 'es'){
+      m1.textContent = (`Buscando por categoría "${catWord}"...`) //display loading text in spanish
+    }
+    else{
+      m1.textContent = (`Searching by category "${catWord}"...`) //display loading text in english
+    }
   
     console.log('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat)
       fetch('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat).then((response)=>{
@@ -261,10 +288,10 @@ if(url.includes('/search')){
           else{
               let counter = 0
               if(lang == 'es'){
-                m1.textContent = ('Resultados:')
+                m1.textContent = (`Resultados para "${catWord}":`)
               }
               else{
-                m1.textContent = ('Results:') 
+                m1.textContent = (`Results for "${catWord}":`) 
               }
               data.list.forEach(topic => {
                   let item = document.createElement('div') 
