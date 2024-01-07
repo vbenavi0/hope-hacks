@@ -168,6 +168,8 @@ if(url.includes('/search')){
     e.preventDefault()
 
     console.log('keyword form submitted')
+    m2.textContent = ('') //reset display
+    list.innerHTML = ('') //reset list
     const keyWord = topicInput.value
     if(lang == 'es' && keyWord == ''){
       return m1.textContent = ('Por favor proporcione una palabra clave')
@@ -182,8 +184,6 @@ if(url.includes('/search')){
     else{
       m1.textContent = (`Searching by keyword "${keyWord}"...`) //display loading text in english
     }
-    m2.textContent = ('') //reset display
-    list.innerHTML = ('') //reset list
 
     console.log('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord)
     fetch('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord).then((response)=>{
@@ -241,6 +241,8 @@ if(url.includes('/search')){
     e.preventDefault()
     var catWord ='';
     console.log('category form submitted')
+    m2.textContent = ('') //reset display
+    list.innerHTML = ('') //reset list
   
     const cat = catDrop.value
     if(lang == 'es'){
@@ -274,8 +276,6 @@ if(url.includes('/search')){
     else{
       m1.textContent = (`Searching by category "${catWord}"...`) //display loading text in english
     }
-    m2.textContent = ('') //reset display
-    list.innerHTML = ('') //reset list
   
     console.log('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat)
       fetch('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat).then((response)=>{
