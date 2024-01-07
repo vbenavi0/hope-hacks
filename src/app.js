@@ -14,7 +14,7 @@ const catList = require('./utils/catList')
 const pool = mysql.createPool({
 	host: 'localhost',
 	user: 'root',
-	password: 'Amohos5901.',
+	password: 'password',
 })
 
 pool.getConnection((err, connection) => {
@@ -125,10 +125,10 @@ app.get('/keyWordSearch', (req, res)=>{
     }
     if(!req.query.keyWord){
         if(req.query.lang=='es'){
-            return res.send({error: "Debes proporcionar una palabra clave",})
+            return res.send({error: "Por favor proporcione una palabra clave",})
         }
         else{
-            return res.send({error: "You must provide a keyword",})
+            return res.send({error: "Please provide a keyword",})
         }
     }
     keyWordSearch(req.query.lang, req.query.keyWord).then(data =>{
@@ -154,10 +154,10 @@ app.get('/catSearch', (req, res)=>{
     }
     if(!req.query.categoryId){
         if(req.query.lang=='es'){
-            return res.send({error: "Debes proporcionar una categoría",})
+            return res.send({error: "Por favor proporcionar una categoría",})
         }
         else{
-            return res.send({error: "You must provide a category",})
+            return res.send({error: "Please provide a category",})
         }
     }
     catSearch(req.query.lang, req.query.categoryId).then(data =>{
