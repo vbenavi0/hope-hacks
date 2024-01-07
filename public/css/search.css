@@ -6,7 +6,7 @@
 }
 
 .intro {
-    margin: 40px auto;
+    margin: 40px auto 0;
     text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
@@ -17,7 +17,7 @@
 
 .card {
     width: 60%;
-    margin: 100px auto;
+    margin: 50px auto;
 }
 
 .card p {
@@ -30,8 +30,7 @@
 
 .tabs {
     display: flex;
-    flex-direction: row; /* Tabs are in a row by default on larger screens */
-    /* Add any necessary styles for larger screens */
+    flex-direction: row; 
   }
 
 .tab:hover {
@@ -44,6 +43,50 @@
     text-align: center;
 }
 
+#message1 {
+  text-align: center;
+  font-weight: 700;
+  color: #252f9c;
+}
+
+.result {
+  text-align: center;
+  background-color: #cfe5ff;
+  margin: 0 auto 20px;
+  width: 30%;
+  height: 500px;
+  padding: 20px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-shadow: 7px 7px 7px #252f9c;
+}
+
+#resultList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 100px;
+}
+
+.result h4 {
+  color: #252f9c;
+  text-shadow: 2px 2px 2px #000;
+  margin-bottom: 20px;
+}
+
+.result img {
+  width: 180px;
+  height: 180px;
+  border-radius: 5px;
+}
+
+.result a {
+  text-decoration: underline;
+  font-size: 1.3rem;
+}
+
+
+
 @media only screen and (max-width: 320px) {
 
 
@@ -54,35 +97,32 @@
     }
 
     .title1 {
-        /* Add specific styles for screens from 321px to 700px for the title */
-        font-size: 1.8rem; /* Example font size adjustment */
+        font-size: 1.8rem; 
       }
     
       .intro {
-        /* Add specific styles for screens from 321px to 700px for the paragraph */
-        font-size: 1rem; /* Example font size adjustment */
+        font-size: 1rem; 
         margin-bottom: -70px;
       }
 
     
 
     .card .card-content p {
-            padding: 0 !important; /* Adjust padding for smaller screens */
-            font-size: 14px !important; /* Adjust font size for smaller screens */
+            padding: 0 !important; 
+            font-size: 14px !important; 
           }   
           
           .tabs .tab a{
-            /* Add styles for smaller screens */
-            font-size: 11px; /* Adjust font size for smaller screens */
-           /* flex-direction: column !important; /* Stack tabs vertically for smaller screens */
-           /* margin-bottom: 8px; /* Add some spacing between stacked tabs */
+            font-size: 11px;
+           /* flex-direction: column !important; 
+           /* margin-bottom: 8px; */
 
           }
 
           .select-wrapper input.select-dropdown {
-            width: 100%; /* Make the select box full width on smaller screens */
-            font-size: 14px !important; /* Adjust font size for smaller screens */
-            margin-bottom: 8px; /* Add some spacing below the select box */
+            width: 100%; 
+            font-size: 14px !important; 
+            margin-bottom: 8px; 
           }
 
   }
@@ -96,45 +136,33 @@
         margin-left: -16px;
     }
 
-  
-
-    .title1 {
-        /* Add specific styles for screens from 321px to 700px for the title */
-        font-size: 2rem; /* Example font size adjustment */
+      .title1 {
+        font-size: 2rem; 
       }
     
       .intro {
-        /* Add specific styles for screens from 321px to 700px for the paragraph */
-        font-size: 1.2rem; /* Example font size adjustment */
+        font-size: 1.2rem; 
         margin-bottom: -70px;
       }
 
       .card .card-content p {
-        padding: 0 !important; /* Adjust padding for smaller screens */
-        font-size: 17px !important; /* Adjust font size for smaller screens */
+        padding: 0 !important; 
+        font-size: 17px !important; 
       } 
       
           
       .tabs .tab a{
-        /* Add styles for smaller screens */
-        font-size: 13px; /* Adjust font size for smaller screens */
-       /* flex-direction: column !important; /* Stack tabs vertically for smaller screens */
-       /* margin-bottom: 8px; /* Add some spacing between stacked tabs */
+        font-size: 13px; 
 
       }
 
       .select-wrapper input.select-dropdown {
-        width: 100%; /* Make the select box full width on smaller screens */
-        font-size: 15px !important; /* Adjust font size for smaller screens */
-        margin-bottom: 8px; /* Add some spacing below the select box */
+        width: 100%; 
+        font-size: 15px !important; 
+        margin-bottom: 8px; 
       }
-
-
-   
-    
   }
   
-  /* Styles for screens from 601px to 933px */
   @media only screen and (min-width: 601px) and (max-width: 933px) {
 
     .brand-logo.blue-text.text-darken-2 {
@@ -143,39 +171,31 @@
       
     }
 
-
     .title1 {
-        /* Add specific styles for screens from 321px to 700px for the title */
-        font-size: 2.3rem; /* Example font size adjustment */
+        font-size: 2.3rem;
       }
     
       .intro {
-        /* Add specific styles for screens from 321px to 700px for the paragraph */
-        font-size: 1.5rem; /* Example font size adjustment */
+        font-size: 1.5rem; 
         margin-bottom: -70px;
       }
 
       .card .card-content p {
-        padding: 0 !important; /* Adjust padding for smaller screens */
-        font-size: 20px !important; /* Adjust font size for smaller screens */
+        padding: 0 !important;
+        font-size: 20px !important; 
       }  
-        
-          
-   
  
   }
   
-  /* Styles for screens from 934px to 1200px */
   @media only screen and (min-width: 934px) and (max-width: 1200px) {
  
     .card .card-content p {
-        padding: 0 !important; /* Adjust padding for smaller screens */
-        font-size: 25px !important; /* Adjust font size for smaller screens */
+        padding: 0 !important; 
+        font-size: 25px !important; 
       }  
 
       .intro {
-        /* Add specific styles for screens from 321px to 700px for the paragraph */
-        font-size: 1.5rem; /* Example font size adjustment */
+        font-size: 1.5rem; 
         margin-bottom: -70px;
       }
 

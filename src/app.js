@@ -124,7 +124,12 @@ app.get('/keyWordSearch', (req, res)=>{
         return res.send({error: "You must provide a lang query",})
     }
     if(!req.query.keyWord){
-        return res.send({error: "You must provide a keyWord query",})
+        if(req.query.lang=='es'){
+            return res.send({error: "Por favor proporcione una palabra clave",})
+        }
+        else{
+            return res.send({error: "Please provide a keyword",})
+        }
     }
     keyWordSearch(req.query.lang, req.query.keyWord).then(data =>{
         if(data){
@@ -133,7 +138,12 @@ app.get('/keyWordSearch', (req, res)=>{
             })
         }
         else{
-            return res.send({error: "Invalid Search"})
+            if(req.query.lang=='es'){
+                return res.send({error: "No se han encontrado resultados"})
+            }
+            else{
+                return res.send({error: "No results found"})
+            }
         }
     })
 })
@@ -143,7 +153,12 @@ app.get('/catSearch', (req, res)=>{
         return res.send({error: "You must provide a lang query",})
     }
     if(!req.query.categoryId){
-        return res.send({error: "You must provide a category query",})
+        if(req.query.lang=='es'){
+            return res.send({error: "Por favor proporcionar una categoría",})
+        }
+        else{
+            return res.send({error: "Please provide a category",})
+        }
     }
     catSearch(req.query.lang, req.query.categoryId).then(data =>{
         res.send({

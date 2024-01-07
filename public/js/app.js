@@ -63,60 +63,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const topicForm = document.querySelector('#topicSearchForm')
 const categoryForm = document.querySelector('#categorySearchForm')
-const keyLang = document.querySelector("#keyLang")
 const topicInput = document.querySelector('#icon_prefix')
 const m1 = document.querySelector('#message1')
 const m2 = document.querySelector('#message2')
 const list = document.querySelector('#resultList')
-const catLang = document.querySelector("#catLang")
 const catDrop = document.querySelector('#categories')
 const imports = new Event("imports");
+var lang = 'en'
+var enCats = []
+var esCats = []
 
-topicForm.addEventListener('submit', (e)=>{
-    e.preventDefault()
-
-    console.log('topic form submitted')
-
-    m1.textContent = ('loading') //display loading text
-    m2.textContent = ('') //reset display
-    list.innerHTML = ('') //reset list
-
-    const keyWord = topicInput.value
-    const lang = 'en'
-    console.log('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord)
-    fetch('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord).then((response)=>{
-      response.json()
-    .then((data)=>{
-      console.log(data)
-        if(data.error){ //if server error, display proper error
-            m1.textContent = (data.error)
-        } 
-        else{
-            m1.textContent = ('Results:') 
-            data.list.forEach(topic => {
-                let item = document.createElement('div') 
-                let title = document.createElement('h3')
-                let categories = document.createElement('p')
-                let url = document.createElement('a')
-
-                title.textContent = topic.Title
-                item.append(title) 
-
-                categories.textContent = topic.Categories
-                item.append(categories)
-
-                url.textContent = topic.AccessibleVersion
-                url.href = topic.AccessibleVersion
-                item.append(url)
-
-                list.append(item) 
-            });
-        }
-      })
-  })
-})
-
-if(url.includes('/search')){
+function importCats(){
   console.log('category import')
   fetch('http://localhost:3000/catList?lang=en').then((response)=>{
       response.json()
@@ -127,44 +84,109 @@ if(url.includes('/search')){
         } 
         else{
             data.list.forEach(category => {
-                let item = document.createElement('option') 
-
-                item.value = category.Id
-                item.textContent = category.Title
-
-                catDrop.append(item)
-                document.dispatchEvent(imports)
+              // console.log(category)
+              enCats.push(category)
           });
-          console.log('Categories Imported')
+          changeCats()
         }
       })
+    }).then(()=>{console.log('En Categories Imported')
+    console.log(enCats)})
+
+    fetch('http://localhost:3000/catList?lang=es').then((response)=>{
+      response.json()
+    .then((data)=>{
+      console.log(data)
+        if(data.error){ //if server error, display proper error
+            return console.log(data.error)
+        } 
+        else{
+            data.list.forEach(category => {
+              esCats.push(category)
+          });
+          changeCats()
+        }
+      })
+    }).then(()=>{console.log('Es Categories Imported')
+    console.log(esCats)
     })
 }
 
-document.addEventListener('imports', function() {
-  var drops = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(drops, {
+function changeCats(){
+  console.log('category change')
+  if(lang == 'es'){
+    catDrop.innerHTML = '<option value="" disabled selected data-translate="Choose Category">Elegir Categoria</option>'
+    esCats.forEach(category => {
+      let item = document.createElement('option') 
+
+      item.value = category.Id
+      item.textContent = category.Title
+      item.id = 'esCat'+category.Id
+
+      catDrop.append(item)
+    })
+  }
+  else{
+    catDrop.innerHTML = '<option value="" disabled selected data-translate="Choose Category">Choose Category</option>'
+    console.log(enCats)
+    enCats.forEach(category => {
+      let item = document.createElement('option') 
+
+      item.value = category.Id
+      item.textContent = category.Title
+      item.id = 'enCat'+category.Id
+
+      catDrop.append(item)
+    })
+  }
+  document.dispatchEvent(imports)
+}
+
+function changeLanguage(language){
+  if(language==='English'){
+    lang = 'en'
+  }
+  else if(language==='Español'){
+    lang = 'es'
+  }
+  list.innerHTML = ""
+  m1.innerHTML = ""
+  m2.innerHTML = ""
+  changeCats()
+}
+
+if(url.includes('/search')){
+  importCats()
+
+  document.addEventListener('imports', function() {
+    var drops = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(drops, {
+    });
   });
-});
 
+  topicForm.addEventListener('submit', (e)=>{
+    e.preventDefault()
 
-categoryForm.addEventListener('submit', (e)=>{
-  e.preventDefault()
+    console.log('keyword form submitted')
+    m2.textContent = ('') //reset display
+    list.innerHTML = ('') //reset list
+    const keyWord = topicInput.value
+    if(lang == 'es' && keyWord == ''){
+      return m1.textContent = ('Por favor proporcione una palabra clave')
+    }
+    else if(keyWord == ''){
+      return m1.textContent = ('Please provide a keyword')
+    }
 
-  console.log('category form submitted')
+    if(lang == 'es'){
+      m1.textContent = (`Buscando por palabra clave "${keyWord}"...`) //display loading text in spanish
+    }
+    else{
+      m1.textContent = (`Searching by keyword "${keyWord}"...`) //display loading text in english
+    }
 
-  const cat = catDrop.value
-  const lang = 'en'
-
-  console.log(lang)
-  console.log(cat)
-
-  m1.textContent = ('loading') //display loading text
-  m2.textContent = ('') //reset display
-  list.innerHTML = ('') //reset list
-
-  console.log('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat)
-    fetch('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat).then((response)=>{
+    console.log('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord)
+    fetch('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord).then((response)=>{
       response.json()
     .then((data)=>{
       console.log(data)
@@ -172,27 +194,138 @@ categoryForm.addEventListener('submit', (e)=>{
             m1.textContent = (data.error)
         } 
         else{
-            m1.textContent = ('Results:') 
+          let counter = 0
+          if(lang == 'es'){
+            m1.textContent = (`Resultados para "${keyWord}":`)
+          }
+          else{
+            m1.textContent = (`Results for "${keyWord}":`) 
+          }
             data.list.forEach(topic => {
                 let item = document.createElement('div') 
-                let title = document.createElement('h3')
+                let title = document.createElement('h4')
                 let categories = document.createElement('p')
                 let url = document.createElement('a')
+                let img = document.createElement('img')
 
                 title.textContent = topic.Title
                 item.append(title) 
 
+                img.src = topic.ImageUrl
+                item.append(img)
+
                 categories.textContent = topic.Categories
                 item.append(categories)
 
-                url.textContent = topic.AccessibleVersion
+                if(lang == 'es'){
+                  url.textContent = "Abrir en una nueva página"
+                }
+                else{
+                  url.textContent = "Click to open in New Tab"
+                }
                 url.href = topic.AccessibleVersion
+                url.target = "_blank"
                 item.append(url)
 
+                counter+=1
+                item.id = 'result'+counter
+                item.classList.add('result')
                 list.append(item) 
             });
-        }
-      })
+          }
+        })
     })
-})
+  })
 
+  categoryForm.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    var catWord ='';
+    console.log('category form submitted')
+    m2.textContent = ('') //reset display
+    list.innerHTML = ('') //reset list
+  
+    const cat = catDrop.value
+    if(lang == 'es'){
+      try{catWord = document.getElementById('esCat'+catDrop.value).innerText}
+      catch{return m1.textContent = ('Porfavor elegir una categoría') }
+    }
+    else{
+      try{catWord = document.getElementById('enCat'+catDrop.value).innerText}
+      catch{return m1.textContent = ('Please select a category')}
+    }
+    // try{
+    //   if(lang == 'es'){
+    //     const catWord = document.getElementById('esCat'+catDrop.value).innerText
+    //   }
+    //   else{
+    //     const catWord = document.getElementById('enCat'+catDrop.value).innerText
+    //   }
+    // }
+    // catch{
+    //   if(lang == 'es'){
+    //     return m1.textContent = ('Porfavor elegir una categoría') 
+    //   }
+    //   else{
+    //     return m1.textContent = ('Please select a category') 
+    //   }
+    // }
+  
+    if(lang == 'es'){
+      m1.textContent = (`Buscando por categoría "${catWord}"...`) //display loading text in spanish
+    }
+    else{
+      m1.textContent = (`Searching by category "${catWord}"...`) //display loading text in english
+    }
+  
+    console.log('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat)
+      fetch('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat).then((response)=>{
+        response.json()
+      .then((data)=>{
+        console.log(data)
+          if(data.error){ //if server error, display proper error
+              m1.textContent = (data.error)
+          } 
+          else{
+              let counter = 0
+              if(lang == 'es'){
+                m1.textContent = (`Resultados para "${catWord}":`)
+              }
+              else{
+                m1.textContent = (`Results for "${catWord}":`) 
+              }
+              data.list.forEach(topic => {
+                  let item = document.createElement('div') 
+                  let title = document.createElement('h4')
+                  let categories = document.createElement('p')
+                  let url = document.createElement('a')
+                  let img = document.createElement('img')
+  
+                  title.textContent = topic.Title
+                  item.append(title) 
+  
+                  img.src = topic.ImageUrl
+                  item.append(img)
+  
+                  categories.textContent = topic.Categories
+                  item.append(categories)
+  
+                  if(lang == 'es'){
+                    url.textContent = "Abrir en una nueva página"
+                  }
+                  else{
+                    url.textContent = "Click to open in New Tab"
+                  }
+                  url.href = topic.AccessibleVersion
+                  url.target = "_blank"
+                  item.append(url)
+  
+                  counter+=1
+                  item.id = 'result'+counter
+                  item.classList.add('result')
+                  list.append(item) 
+              });
+          }
+        })
+      })
+  })
+}

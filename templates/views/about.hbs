@@ -137,7 +137,10 @@
           <div class="row">
             <div class="col l6 s12">
               <h5 class="blue-text text-darken-2" data-translate="Sign up for our Newsletter!">Sign up for our Newsletter!</h5>
-              <input class="newsletter grey lighten-5" placeholder="email@email.com"></input>
+              <form id="newsletterForm" action="/subscribe" method="post">
+                <input class="newsletter grey lighten-5" id="email" type="email" name="email" placeholder="email@example.com" required>
+                <input type="submit" id="submit" value="submit">
+              </form>
             </div>
             <div class="col l4 offset-l2 s12">
               <h5 class="blue-text text-darken-2" data-translate="Helpful Links">Helpful Links</h5>
