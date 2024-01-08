@@ -237,10 +237,10 @@ if(url.includes('/search')){
                 item.append(categories)
 
                 if(lang == 'es'){
-                  url.textContent = "Abrir en una nueva página"
+                  url.textContent = "Haga clic para ver más"
                 }
                 else{
-                  url.textContent = "Click to open in New Tab"
+                  url.textContent = "Click to see more"
                 }
                 url.href = topic.AccessibleVersion
                 url.target = "_blank"
