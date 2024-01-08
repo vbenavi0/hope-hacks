@@ -14,8 +14,12 @@ submitButton.addEventListener('click', function(event) {
     const emailInput = document.getElementById("email")
     const email = emailInput.value
     if (!isValidEmail(email)) {
-      alert("Please enter a valid email address.");
-      return;
+      if(lang=='es'){
+        return alert("Por favor, introduce una dirección de correo electrónico válida.");
+      }
+      else{
+        return alert("Please enter a valid email address.");
+      }
     }
     const formData = new URLSearchParams() ///creating a new class 
     formData.append("email", email)
@@ -33,6 +37,12 @@ submitButton.addEventListener('click', function(event) {
     .then(response => {
       if(response.ok) {
         console.log("inserted in the database")
+        if(lang=='es'){
+          alert("Correo electrónico enviado correctamente.")
+        }
+        else{
+          alert("Email successfully submitted.")
+        }
       } else {
         console.log("Error inserted in the database: ", response.statusText)
       }
