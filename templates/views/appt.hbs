@@ -13,39 +13,39 @@
 
 <body>
 <header>
-    <nav>
-        <div class="nav-wrapper blue lighten-3" class="navbar-fixed">
-          <a href="/" class="brand-logo blue-text text-darken-2" >SALUD Y SONRISAS WELLNESS</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="/" class="blue-text text-darken-2" data-translate="Home">Home</a></li>
-            <li><a href="about" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
-            <li><a href="search" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
-            <li><a href="recommend" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
-            <li class="active"><a href="appt" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
-              <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
-            <ul id='dropdown1' class='dropdown-content'>
-                <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
-                <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('Español')">Español</a></li>
-            </ul>
-          </ul>
-        </div>
-      </nav>
-
-      <ul class="sidenav" id="mobile-demo" class="navbar-fixed">
-        <li><a href="/" class="blue-text text-darken-2">Home</a></li>
+  <nav>
+    <div class="nav-wrapper blue lighten-3" class="navbar-fixed">
+      <a href="index" class="brand-logo blue-text text-darken-2" >SALUD Y SONRISAS WELLNESS</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index" class="blue-text text-darken-2" data-translate="Home">Home</a></li>
         <li><a href="about" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
-        <li><a href="search" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
+        <li ><a href="search" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
         <li><a href="recommend" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
         <li class="active"><a href="appt" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
-        <li><a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown2' data-translate="Language">Language</a>
-          <ul id='dropdown2' class='dropdown-content'>
+          <a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown1' data-translate="Language">Language</a>
+        <ul id='dropdown1' class='dropdown-content'>
             <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
             <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('Español')">Español</a></li>
-          </ul>
-      </li>
+        </ul>
       </ul>
-  </header>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo" class="navbar-fixed">
+    <li><a href="index" class="blue-text text-darken-2">Home</a></li>
+    <li><a href="about" class="blue-text text-darken-2" data-translate="About Us" >About Us</a></li>
+    <li><a href="search" class="blue-text text-darken-2" data-translate="Topic Search">Topic Search</a></li>
+    <li><a href="recommend" class="blue-text text-darken-2"  data-translate="Recommendations">Recommendations</a></li>
+    <li class="active"><a href="appt" class="blue-text text-darken-2" data-translate="Online Visit">Online Visit</a></li>
+    <li><a class='dropdown-trigger btn blue darken-2' href='#' data-target='dropdown2' data-translate="Language">Language</a>
+      <ul id='dropdown2' class='dropdown-content'>
+        <li><a class="blue-text text-darken-2" href="#!" data-translate="English" onclick="changeLanguage('English')">English</a></li>
+        <li><a class="blue-text text-darken-2" href="#!" data-translate="Español" onclick="changeLanguage('Español')">Español</a></li>
+      </ul>
+  </li>
+  </ul>
+      </header>
 
   <main>     
     <div class="form-container">
@@ -93,14 +93,17 @@
   </main>
   
 <div id="footerContainer"></div>
-      <footer class="page-footer blue lighten-3">
+<div class="emergency">
+  <p class="disclaimer" data-translate="disclaimer">Disclaimer: Salud Y Sonrisas Wellness provides healthcare resources for informational purposes only. Please seek guidance from a medical professional regarding any medical conditions or emergencies. If you believe you are experiencing an emergency, please contact 911 or contact your doctor.</p>
+</div>
+<footer class="page-footer blue lighten-3">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
               <h5 class="blue-text text-darken-2" data-translate="Sign up for our Newsletter!">Sign up for our Newsletter!</h5>
               <form id="newsletterForm" action="/subscribe" method="post">
-                <input class="newsletter grey lighten-5" id="email" type="email" name="email" placeholder="email@example.com" required>
-                <input type="submit" id="submit" value="submit">
+                <input class="newsletter grey lighten-5" id="email1" type="email" name="email" placeholder="email@example.com" required>
+                <input type="submit" class="submit" id="submit" value="Submit">
               </form>
             </div>
             <div class="col l4 offset-l2 s12">
@@ -114,13 +117,15 @@
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container blue-text text-darken-2">
-          © 2023 Salud Y Sonrisas
-          <a class="blue-text text-darken-2 right" href="#!" data-translate="More">More Links</a>
-          </div>
-        </div>
-      </footer>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container blue-text text-darken-2">
+      © 2023 Salud Y Sonrisas
+      <a class="blue-text text-darken-2 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
                 
   <script src="../js/app.js"></script>
   <script src="../js/translator.js"></script>
