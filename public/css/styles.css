@@ -75,6 +75,7 @@ nav ul  {
   @media only screen and (max-width: 600px) {
     .brand-logo {
         margin-left: 5px;
+        font-weight: 400;
     }
 
     nav ul {
@@ -100,4 +101,9 @@ nav ul  {
   .row1 h1 {
       font-size: 4rem;
   }
+}
+
+.disclaimer {
+  width: 90%;
+  font-size: 1rem;
 }
