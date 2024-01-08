@@ -115,7 +115,7 @@ function importCats(){
 function changeCats(){
   console.log('category change')
   if(lang == 'es'){
-    catDrop.innerHTML = '<option value="" disabled selected data-translate="Choose Category">Elegir Categoria</option>'
+    catDrop.innerHTML = '<opon value="" disabled selected data-translate="Choose Category">Elegir Categoria</option>'
     esCats.forEach(category => {
       let item = document.createElement('option') 
 
