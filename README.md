@@ -7,7 +7,7 @@ Features
 Search Functionality: Easily find information on specific health topics using our powerful search feature.
 Topic Categories: Explore a wide range of health categories, including nutrition, fitness, mental health, and more.
 Expert Articles: Access articles written by health professionals and experts in their respective fields.
-User-Friendly Interface: Navigate the site effortlessly with our intuitive and user-friendly design.
+User-Friendly Interface: Navigate the site effortlessly with our intuitive and user-friendly design. Our platform is accessible across a range of devices, including mobile phones, tablets, and desktops.
 
 Getting Started
 
@@ -15,7 +15,7 @@ Prerequisites
 Modern web browser (Google Chrome, Mozilla Firefox, Safari, etc.)
 
 Installation
-No installation is required. Simply visit HealthInfoHub.com in your web browser and start exploring!
+No installation is required. Simply visit our site in your web browser and start exploring!
 
 Usage
 1. Search for Information:
@@ -24,3 +24,5 @@ Usage
 - Click on articles to access in-depth information written by health professionals.
 3. Stay Updated:
 - Subscribe to our newsletter for the latest articles delivered to your inbox.
+4. Online Appointments:
+- Ability to schedule a free consultation with one of our expert healthcare workers.
