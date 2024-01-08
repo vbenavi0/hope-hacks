@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Español": "La página no existe"
       },
       "disclaimer": {
-        "English": "Disclaimer: Salud Y Sonrisas Wellness provides healthcare resources for informational purposes only. Please speak guidance from a medical professional regarding any medical conditions or emergencies. If you believe you are experiencing an emergency, please contact 911 or contact your doctor.",
+        "English": "Disclaimer: Salud Y Sonrisas Wellness provides healthcare resources for informational purposes only. Please seek guidance from a medical professional regarding any medical conditions or emergencies. If you believe you are experiencing an emergency, please contact 911 or contact your doctor.",
         "Español": "Descargo de responsabilidad: Salud Y Sonrisas Wellness proporciona recursos de atención médica solo con fines informativos. Hable con la orientación de un profesional médico sobre cualquier condición médica o emergencia. Si cree que está experimentando una emergencia, comuníquese con el 911 o comuníquese con su médico."
       },
       "Language": {
