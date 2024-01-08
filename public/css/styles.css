@@ -101,9 +101,9 @@ nav ul  {
   .row1 h1 {
       font-size: 4rem;
   }
-}
 
-.disclaimer {
-  width: 90%;
-  font-size: 1rem;
+  .disclaimer {
+    width: 90%;
+    font-size: 1rem
+  }
 }
