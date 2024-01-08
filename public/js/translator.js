@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
       "Search resources": {
         "English": "Search resources by topic",
-        "Español": "Buscar"
+        "Español": "Busqueda por Tema"
       },
       "Search": {
         "English": "Topic Search",
