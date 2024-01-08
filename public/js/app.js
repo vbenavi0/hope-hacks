@@ -149,10 +149,12 @@ function changeLanguage(language){
   else if(language==='Español'){
     lang = 'es'
   }
-  list.innerHTML = ""
-  m1.innerHTML = ""
-  m2.innerHTML = ""
-  changeCats()
+  if(url.includes('/search')){
+    list.innerHTML = ""
+    m1.innerHTML = ""
+    m2.innerHTML = ""
+    changeCats()
+  }
 }
 
 if(url.includes('/search')){
