@@ -21,6 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "English": "Online Visit",
         "Español": "Visitas en línea"
       },
+      "404": {
+        "English": "Page Does Not Exist",
+        "Español": "La página no existe"
+      },
+      "disclaimer": {
+        "English": "Disclaimer: Salud Y Sonrisas Wellness provides healthcare resources for informational purposes only. Please speak guidance from a medical professional regarding any medical conditions or emergencies. If you believe you are experiencing an emergency, please contact 911 or contact your doctor.",
+        "Español": "Descargo de responsabilidad: Salud Y Sonrisas Wellness proporciona recursos de atención médica solo con fines informativos. Hable con la orientación de un profesional médico sobre cualquier condición médica o emergencia. Si cree que está experimentando una emergencia, comuníquese con el 911 o comuníquese con su médico."
+      },
       "Language": {
         "English": "Language",
         "Español": "Lenguaje"
@@ -313,9 +321,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Change the iframe source based on the selected language
         var iframe = document.getElementById("myhealthfinderframe");
         if (language === "English") {
-            iframe.src = "https://www.health.gov/myhealthfinder?widget=true";
+            try{iframe.src = "https://www.health.gov/myhealthfinder?widget=true";}catch{}
         } else if (language === "Español") {
-            iframe.src = "https://www.health.gov/espanol/myhealthfinder?widget=true";
+            try{iframe.src = "https://www.health.gov/espanol/myhealthfinder?widget=true";}catch{}
         }
     }
 
