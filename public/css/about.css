@@ -55,8 +55,8 @@
       }
 
     .about-section p {
-        width: 70%;
-        font-size: 1rem;
+        width: 95%;
+        font-size: 0.8rem;
         padding-left: 0;
         padding-right: 0;
         padding-bottom: 20px;
@@ -71,17 +71,19 @@
         width: 100%;
         display: contents;
       }
-    
-
 
       .saludLogo {
         width: 80%; 
         margin: 20px auto; 
     }
 
+    .card {
+      margin: 10px auto;
+    }
+
     .card .card-image img{
-        height: 300px;
-        width: 300px;
+        height: 350px;
+        width: 280px;
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -109,7 +111,7 @@
       }
 
     .about-section p {
-        width: 70%;
+        width: 90%;
         font-size: 1rem;
         padding-left: 0;
         padding-right: 0;
@@ -135,12 +137,12 @@
 
     .card {
         width: 310px;
-        margin: auto;
+        margin: 20px auto;
             }
            
 
     .card .card-image img{
-      height: 300px;
+      height: 400px;
       width: 300px;
       margin: auto;
       padding: 10px;
@@ -162,7 +164,7 @@
     }
 
     .about-section p {
-        width: 80%;
+        width: 90%;
         font-size: 1.2rem;
         padding-left: 0;
         padding-right: 0;
@@ -200,15 +202,14 @@
         width: 350px;
         margin: 20px auto;
     }
-           
 
     .card .card-image img{
-      height: 350px;
+      height: 420px;
       width: 330px;
       margin: auto;
       padding: 10px;
     }
-   
+
     }
   
   
