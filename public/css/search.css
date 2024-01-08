@@ -1,88 +1,88 @@
 .title1  {
-    text-align: center;
-    font-weight: 700;
-    color: #252f9c;
-    text-shadow: 3px 3px 3px #cfe5ff;
-}
-
-.intro {
-    margin: 40px auto 0;
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #252f9c;
-    text-shadow: 3px 3px 3px #cfe5ff;
-    width: 60%;
-}
-
-.card {
-    width: 60%;
-    margin: 50px auto;
-}
-
-.card p {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #252f9c;
-    text-shadow: 3px 3px 3px #cfe5ff;
-}
-
-.tabs {
-    display: flex;
-    flex-direction: row; 
-  }
-
-.tab:hover {
-    background-color: #cfe5ff;
-}
-
-.tabOne, .tabTwo {
-    display: block;
-    margin: auto;
-    text-align: center;
-}
-
-#message1 {
   text-align: center;
   font-weight: 700;
   color: #252f9c;
+  text-shadow: 3px 3px 3px #cfe5ff;
+}
+
+.intro {
+  margin: 40px auto 0;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #252f9c;
+  text-shadow: 3px 3px 3px #cfe5ff;
+  width: 60%;
+}
+
+.card {
+  width: 60%;
+  margin: 50px auto;
+}
+
+.card p {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #252f9c;
+  text-shadow: 3px 3px 3px #cfe5ff;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row; 
+}
+
+.tab:hover {
+  background-color: #cfe5ff;
+}
+
+.tabOne, .tabTwo {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+#message1 {
+text-align: center;
+font-weight: 700;
+color: #252f9c;
 }
 
 .result {
-  text-align: center;
-  background-color: #cfe5ff;
-  margin: 0 auto 20px;
-  width: 30%;
-  height: 500px;
-  padding: 20px;
-  border: 3px solid #fff;
-  border-radius: 10px;
-  box-shadow: 7px 7px 7px #252f9c;
+text-align: center;
+background-color: #cfe5ff;
+margin: 0 auto 20px;
+width: 30%;
+height: 500px;
+padding: 20px;
+border: 3px solid #fff;
+border-radius: 10px;
+box-shadow: 7px 7px 7px #252f9c;
 }
 
 #resultList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 100px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin: 20px 100px;
 }
 
 .result h4 {
-  color: #252f9c;
-  text-shadow: 2px 2px 2px #000;
-  margin-bottom: 20px;
+color: #252f9c;
+text-shadow: 2px 2px 2px #000;
+margin-bottom: 20px;
 }
 
 .result img {
-  width: 180px;
-  height: 180px;
-  border-radius: 5px;
+width: 180px;
+height: 180px;
+border-radius: 5px;
 }
 
 .result a {
-  text-decoration: underline;
-  font-size: 1.3rem;
+text-decoration: underline;
+font-size: 1.3rem;
 }
 
 
@@ -90,115 +90,229 @@
 @media only screen and (max-width: 320px) {
 
 
-    .brand-logo.blue-text.text-darken-2 {
-        font-size: 10px !important;
-        margin-left: 0;
-      
+  .brand-logo.blue-text.text-darken-2 {
+      font-size: 10px !important;
+      margin-left: 0;
+    
+  }
+
+  .title1 {
+      font-size: 1.8rem; 
+    }
+  
+    .intro {
+      font-size: 1rem; 
+      margin-bottom: -24px;
     }
 
-    .title1 {
-        font-size: 1.8rem; 
-      }
-    
-      .intro {
-        font-size: 1rem; 
-        margin-bottom: -70px;
-      }
-
-    
-
-    .card .card-content p {
-            padding: 0 !important; 
-            font-size: 14px !important; 
-          }   
-          
-          .tabs .tab a{
-            font-size: 11px;
-           /* flex-direction: column !important; 
-           /* margin-bottom: 8px; */
-
-          }
-
-          .select-wrapper input.select-dropdown {
-            width: 100%; 
-            font-size: 14px !important; 
-            margin-bottom: 8px; 
-          }
-
+    #resultList {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 20px 50px;
   }
+
+  .result {
+    width: 100%;
+    height: auto;
+}
+  
+
+  .result h4 {
+    font-size: 1.7rem;
+}
+
+.result p {
+font-size: 1.5rem;
+}
+  
+
+.result img {
+  width: 100px;
+  height: 80px;
+  border-radius: 5px;
+}
+
+  
+
+  .card .card-content p {
+          padding: 0 !important; 
+          font-size: 14px !important; 
+        }   
+        
+        .tabs .tab a{
+          font-size: 11px;
+     
+
+        }
+
+        .select-wrapper input.select-dropdown {
+          width: 100%; 
+          font-size: 14px !important; 
+          margin-bottom: 8px; 
+        }
+
+}
 
 
 @media only screen and (min-width: 321px) and (max-width: 600px) {
 
 
-    .brand-logo.blue-text.text-darken-2 {
-        font-size: 80% !important;
-        margin-left: -16px;
-    }
-
-      .title1 {
-        font-size: 2rem; 
-      }
-    
-      .intro {
-        font-size: 1.2rem; 
-        margin-bottom: -70px;
-      }
-
-      .card .card-content p {
-        padding: 0 !important; 
-        font-size: 17px !important; 
-      } 
-      
-          
-      .tabs .tab a{
-        font-size: 13px; 
-
-      }
-
-      .select-wrapper input.select-dropdown {
-        width: 100%; 
-        font-size: 15px !important; 
-        margin-bottom: 8px; 
-      }
+  .brand-logo.blue-text.text-darken-2 {
+      font-size: 80% !important;
+      margin-left: -16px;
   }
-  
-  @media only screen and (min-width: 601px) and (max-width: 933px) {
-
-    .brand-logo.blue-text.text-darken-2 {
-        font-size: 20px !important;
-        margin-left: 0;
-      
-    }
 
     .title1 {
-        font-size: 2.3rem;
-      }
-    
-      .intro {
-        font-size: 1.5rem; 
-        margin-bottom: -70px;
-      }
-
-      .card .card-content p {
-        padding: 0 !important;
-        font-size: 20px !important; 
-      }  
- 
-  }
+      font-size: 2rem; 
+    }
   
-  @media only screen and (min-width: 934px) and (max-width: 1200px) {
- 
+    .intro {
+      font-size: 1.2rem; 
+      margin-bottom: -24px;
+    }
+
     .card .card-content p {
-        padding: 0 !important; 
-        font-size: 25px !important; 
-      }  
+      padding: 0 !important; 
+      font-size: 17px !important; 
+    } 
+    
+        
+    .tabs .tab a{
+      font-size: 13px; 
 
-      .intro {
-        font-size: 1.5rem; 
-        margin-bottom: -70px;
-      }
+    }
 
-  
+    .select-wrapper input.select-dropdown {
+      width: 100%; 
+      font-size: 15px !important; 
+      margin-bottom: 8px; 
+    }
+
+    #message1 {
+      font-size: 1rem;
   }
+
+
+  #resultList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 50px;
+}
+
+.result {
+  width: 100%;
+  height: auto;
+}
+
+
+.result h4 {
+  font-size: 1.7rem;
+}
+
+.result p {
+font-size: 1.5rem;
+}
+
+
+.result a {
+margin-top: 15px !important;
+}
+
+.result img {
+width: 50%;
+height: auto;
+border-radius: 5px;
+}
+
+
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 933px) {
+
+  .brand-logo.blue-text.text-darken-2 {
+      font-size: 20px !important;
+      margin-left: 0;
+    
+  }
+
+  .title1 {
+      font-size: 2.3rem;
+    }
   
+    .intro {
+      font-size: 1.5rem; 
+      margin-bottom: -24px;
+    }
+
+    .card .card-content p {
+      padding: 0 !important;
+      font-size: 20px !important; 
+    }  
+
+    #resultList {
+      margin-top: 30px;
+      flex-direction: row;
+    }
+  
+    .result {
+      width: 48%; 
+      height: auto;
+      margin-bottom: 20px; 
+    }
+
+
+.result h4 {
+font-size: 2rem;
+}
+
+.result p {
+font-size: 1.5rem;
+}
+
+.result a {
+margin-top: 15px !important;
+}
+
+.result img {
+width: 100%;
+height: auto;
+border-radius: 5px;
+}
+
+
+
+}
+
+@media only screen and (min-width: 934px) and (max-width: 1200px) {
+
+  .card .card-content p {
+      padding: 0 !important; 
+      font-size: 25px !important; 
+    }  
+
+    .intro {
+      font-size: 1.5rem; 
+      margin-bottom: -24px;
+    }
+
+    .result a {
+      margin-top: 10px;
+    }
+
+    .result a {
+      margin-top: 15px !important;
+    }
+    
+    .result img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    }
+
+
+}
