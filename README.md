@@ -25,6 +25,14 @@ Modern web browser (Google Chrome, Mozilla Firefox, Safari, etc.)
 
 No installation is required. Simply visit our site in your web browser and start exploring!
 
+### Built With:
+
+Node.js - The development for our server
+
+MySQL - Our database storage
+
+Materialize - Styling framework
+
 ### Usage
 1. Search for Information:
 - Browse through the topic categories for a curated selection of articles.
@@ -34,3 +42,9 @@ No installation is required. Simply visit our site in your web browser and start
 - Subscribe to our newsletter for the latest articles delivered to your inbox.
 4. Online Appointments:
 - Ability to schedule a free consultation with one of our expert healthcare workers.
+
+## Authors
+### Monica Asensio - Frontend Developer
+### Victor Benavides - Backend Developer
+### Brenda Manon - Database Developer
+### Ricardo Peña - Frontend Developer
