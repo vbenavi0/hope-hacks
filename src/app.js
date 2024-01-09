@@ -183,6 +183,6 @@ app.get('/*', (req, res)=>{
     })
 })
 
-app.listen(3000, ()=>{ //port is localhost:3000
+app.listen(10000, ()=>{ //port is localhost:3000
     console.log('Server is listening on port 3000.')
 })
