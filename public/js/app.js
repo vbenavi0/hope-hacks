@@ -1,6 +1,8 @@
 console.log('Client side JS file is loaded!')
 let url = window.location.href
 console.log(url)
+let url0=(url).replace(window.location.pathname, '')
+console.log(url0)
 
 const newsletterForm = document.getElementById("newsletterForm")
 const submitButton = document.getElementById('submit');
@@ -92,7 +94,7 @@ var esCats = []
 
 function importCats(){
   console.log('category import')
-  fetch('http://localhost:3000/catList?lang=en').then((response)=>{
+  fetch(url0+'/catList?lang=en').then((response)=>{
       response.json()
     .then((data)=>{
       console.log(data)
@@ -110,7 +112,7 @@ function importCats(){
     }).then(()=>{console.log('En Categories Imported')
     console.log(enCats)})
 
-    fetch('http://localhost:3000/catList?lang=es').then((response)=>{
+    fetch(url0+'/catList?lang=es').then((response)=>{
       response.json()
     .then((data)=>{
       console.log(data)
@@ -204,8 +206,8 @@ if(url.includes('/search')){
       m1.textContent = (`Searching by keyword "${keyWord}"...`) //display loading text in english
     }
 
-    console.log('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord)
-    fetch('http://localhost:3000/keyWordSearch?lang='+lang+'&keyWord='+keyWord).then((response)=>{
+    console.log(url0+'/keyWordSearch?lang='+lang+'&keyWord='+keyWord)
+    fetch(url0+'/keyWordSearch?lang='+lang+'&keyWord='+keyWord).then((response)=>{
       response.json()
     .then((data)=>{
       console.log(data)
@@ -296,8 +298,8 @@ if(url.includes('/search')){
       m1.textContent = (`Searching by category "${catWord}"...`) //display loading text in english
     }
   
-    console.log('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat)
-      fetch('http://localhost:3000/catSearch?lang='+lang+'&categoryId='+cat).then((response)=>{
+    console.log(url0+'/catSearch?lang='+lang+'&categoryId='+cat)
+      fetch(url0+'/catSearch?lang='+lang+'&categoryId='+cat).then((response)=>{
         response.json()
       .then((data)=>{
         console.log(data)
