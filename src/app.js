@@ -12,8 +12,8 @@ const catSearch = require('./utils/catSearch')
 const catList = require('./utils/catList')
 
 const pool = mysql.createPool({
-	host: 'localhost',
-	user: 'root',
+	host: 'hopepacks2.c1suigess9hp.us-east-1.rds.amazonaws.com',
+	user: 'root1',
 	password: 'password',
 })
 
